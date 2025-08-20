@@ -80,10 +80,13 @@ formula <- ~betaCol1(colony.dist) + betaCol6(time)
 # constrain transition probabilities
 fixPar <- list(beta=matrix(c(NA,-1.e+10,-1.e+10,-1.e+10,NA,NA,-1.e+10,NA,-1.e+10,-1.e+10,-1.e+10,-1.e+10,
                              NA,   0,   0,   0, 0, 0,   0, 0,   0,   0,   0,   0,
-                              0,   0,   0,   0, 0, NA,   0, 0,   0,   0,   0,   0),
+                             0,   0,   0,   0, 0, NA,   0, 0,   0,   0,   0,   0),
                            nrow=3,byrow=TRUE),delta=matrix(-1.e+100,1,3))
 
 stateNames <- c("outbound","state 2","state 3","inbound")
+latexNames <- ifelse(stateNames %in% c("outbound", "inbound"), 
+                     paste0("``", stateNames, "''"), 
+                     stateNames)
 
 initPos <- mapply(function(x) c(data[which(data$ID==x)[1],c("mu.x")],data[which(data$ID==x)[1],c("mu.y")]),unique(data$ID),SIMPLIFY = FALSE)
 
@@ -143,7 +146,16 @@ AICweights(crwm1,m1)
 
 # agreement in decoded states
 mean(viterbi(m1)==viterbi(crwm1))
-caret::confusionMatrix(data=factor(viterbi(m1)),reference=factor(viterbi(crwm1)))
+cm <- caret::confusionMatrix(data=factor(viterbi(m1)),reference=factor(viterbi(crwm1)))
+#cm_to_latex(
+#  cm = cm,
+#  caption = "Contingency table comparing the Viterbi-decoded state assignments for the 4-state standard step and turn model (``ST'') and the correlated step and turn model (``crwST'') in the southern elephant seal example.",
+#  label = "tab:STstates",
+#  pred_name = "ST",
+#  ref_name = "crwST",
+#  row_names = latexNames,
+#  col_names = latexNames
+#)
 
 pdf("examples/ses/STdens.pdf",width=11,height=11)
 m1dens$stepPlot + m1dens$anglePlot + crwm1dens$stepPlot + crwm1dens$anglePlot + plot_layout(2,2,byrow=TRUE,guides="collect",axes="collect")
@@ -237,21 +249,21 @@ bathm2$state3 <- plotHist(m2,state=3,title="State 3")
 # position-based potential function model
 #############################################################################################
 
-DMpos <- list(mu=list(mean.x=~state1(crw(mu.x_tm1))+state1(d2coast.x+dfrcol.x+land.x+boundary.x)+state2(crw(mu.x_tm1))+state2(d2coast.x+land.x)+state3(crw(mu.x_tm1))+state3(d2coast.x+land.x)+state4(crw(mu.x_tm1))+state4(d2col.x+land.x),
-                      mean.y=~state1(crw(mu.y_tm1))+state1(d2coast.y+dfrcol.y+land.y+boundary.y)+state2(crw(mu.y_tm1))+state2(d2coast.y+land.y)+state3(crw(mu.y_tm1))+state3(d2coast.y+land.y)+state4(crw(mu.y_tm1))+state4(d2col.y+land.y),
-                      sd.x=~ bath + d2coast + land + state1(d2col) + state4(d2col),
-                      sd.y=~ bath + d2coast + land + state1(d2col) + state4(d2col),
+DMpos <- list(mu=list(mean.x=~state1(crw(mu.x_tm1))+state1(d2coast.x+dfrcol.x+land.x+boundary.x)+state2(crw(mu.x_tm1))+state2(d2coast.x+land.x)+state3(crw(mu.x_tm1))+state3(d2coast.x+land.x)+state4(crw(mu.x_tm1))+state4(d2col.x+d2coast.x+land.x),
+                      mean.y=~state1(crw(mu.y_tm1))+state1(d2coast.y+dfrcol.y+land.y+boundary.y)+state2(crw(mu.y_tm1))+state2(d2coast.y+land.y)+state3(crw(mu.y_tm1))+state3(d2coast.y+land.y)+state4(crw(mu.y_tm1))+state4(d2col.y+d2coast.y+land.y),
+                      sd.x=~ bath + d2coast + land + state1(colony.dist) + state4(colony.dist),
+                      sd.y=~ bath + d2coast + land + state1(colony.dist) + state4(colony.dist),
                       corr.xy=~1))
 
-formulapos <- ~betaCol1(bath+d2col+I(d2col^2)+I(d2col^3)+d2coast+I(d2coast^2)+I(d2coast^3)) + betaCol5(bath) + betaCol6(time) + betaCol8(bath)
+formulapos <- ~betaCol1(bath+colony.dist+I(colony.dist^2)+I(colony.dist^3)+d2coast+I(d2coast^2)+I(d2coast^3)) + betaCol5(bath) + betaCol6(time) + betaCol8(bath)
 
-par <- list(Par=list(mu=c(1,0.42,4.74,0.25,4.61,0.42,1,0.67,7.06,5.52,1,-0.34,37.25,6.91,1,0.66,4.63,4.61,1,0.61,4.44,0,4.61,-0.89,1,0.66,20.14,5.52,1,-0.16,8.25,6.91,1,0.61,4.19,4.61,-4.1,0.05,-0.09,5.68,-0.08,-4.42,0.13,0.2,3.7,-5.36,-0.07,-0.49,0.59,-4.18,0.08,0.03,1.76,-0.08,-4.1,0.05,-0.09,5.68,-0.08,-4.42,0.13,0.2,3.7,-5.36,-0.07,-0.49,0.59,-4.18,0.08,0.03,1.76,-0.08,0,0,0,0)),
-             beta=matrix(c(-33.52,-0.9,50.44,-18.68,2.24,-104.96,158.09,-72.36,0,-1e+10,0,0,0,0,0,0,0,0,-1e+10,0,0,0,0,0,0,0,0,-1e+10,0,0,0,0,0,0,0,0,-0.89,0.76,0,0,0,0,0,0,0,-17.14,0,0,0,0,0,0,0,2.06,-1e+10,0,0,0,0,0,0,0,0,-2.95,-0.14,0,0,0,0,0,0,0,-1e+10,0,0,0,0,0,0,0,0,-1e+10,0,0,0,0,0,0,0,0,-1e+10,0,0,0,0,0,0,0,0,-1e+10,0,0,0,0,0,0,0,0),nrow=9))
+par <- list(Par=list(mu=c(1,0.42,4.75,0.25,4.61,0.44,1,0.67,7.07,5.52,1,-0.34,39.43,6.91,1,0.51,3.9,0.01,4.61,1,0.61,4.45,0,4.61,-0.84,1,0.66,19.68,5.52,1,-0.16,8.25,6.91,1,0.55,4.62,0.01,4.61,-4.11,0.05,-0.09,5.66,-0.08,-4.42,0.14,0.2,3.66,-5.36,-0.07,-0.49,0.56,-4.23,0.07,0.01,2.87,-0.09,-4.11,0.05,-0.09,5.66,-0.08,-4.42,0.14,0.2,3.66,-5.36,-0.07,-0.49,0.56,-4.23,0.07,0.01,2.87,-0.09,0,0,0,0)),
+            beta=matrix(c(-27.88,-0.67,39.9,-14.21,1.65,-89.89,136.32,-62.53,0,-1e+10,0,0,0,0,0,0,0,0,-1e+10,0,0,0,0,0,0,0,0,-1e+10,0,0,0,0,0,0,0,0,-0.9,0.75,0,0,0,0,0,0,0,-16.64,0,0,0,0,0,0,0,1.97,-1e+10,0,0,0,0,0,0,0,0,-2.95,-0.14,0,0,0,0,0,0,0,-1e+10,0,0,0,0,0,0,0,0,-1e+10,0,0,0,0,0,0,0,0,-1e+10,0,0,0,0,0,0,0,0,-1e+10,0,0,0,0,0,0,0,0),nrow=9))
 workBounds <- list(mu=matrix(c(-Inf,Inf),nrow=length(par$Par$mu),ncol=2,byrow = TRUE))
-workBounds$mu[c(3,5,9,10,13,14,17,18,21,23,27,28,31,32,35,36),2] <- 0
-workBounds$mu[c(6,24),1] <- 0
+workBounds$mu[c(3,5,9,10,13,14,17,19,22,24,28,29,32,33,36,38),2] <- 0
+workBounds$mu[c(6,25),1] <- 0
 
-fixParpos <- list(mu=c(NA,1:3,NA,4,NA,5:6,NA,NA,7:8,NA,NA,9:10,NA,NA,10+1:3,NA,14,NA,10+5:6,NA,NA,10+7:8,NA,NA,10+9:10,NA,10+11:28,10+11:28,rep(NA,4)),
+fixParpos <- list(mu=c(NA,1:3,NA,4,NA,5:6,NA,NA,7:8,NA,NA,9:11,NA,NA,11+1:3,NA,15,NA,11+5:6,NA,NA,11+7:8,NA,NA,11+9:11,NA,11+12:29,11+12:29,rep(NA,4)),
                   beta=matrix(c(1,rep(NA,3),9,11,NA,13,rep(NA,4),
                                 2,rep(NA,3),10,NA,NA,14,rep(NA,4),
                                 3,rep(NA,11),
@@ -261,10 +273,10 @@ fixParpos <- list(mu=c(NA,1:3,NA,4,NA,5:6,NA,NA,7:8,NA,NA,9:10,NA,NA,10+1:3,NA,1
                                 7,rep(NA,11),
                                 8,rep(NA,11),
                                 rep(NA,5),12,rep(NA,6)),nrow=9,byrow=TRUE),
-               delta=matrix(NA,1,3))
+                  delta=matrix(NA,1,3))
 
 mpos <- fitHMM(data=data, nbStates=4, dist=list(mu="rw_mvnorm2"), formula=formulapos, DM=DMpos, Par0=par$Par, beta0=par$beta,optMethod = "TMB",control=list(silent=TRUE,iter.max=10000,eval.max=10000,maxit=10000),retryFits=0,retrySD=list(mu=1,beta=1,delta=0),
-              fixPar=fixParpos, stateNames = stateNames, formulaDelta=~1, delta0=matrix(-1.e+100,1,3),mvnCoords = "mu",workBounds=workBounds)
+               fixPar=fixParpos, stateNames = stateNames, formulaDelta=~1, delta0=matrix(-1.e+100,1,3),mvnCoords = "mu",workBounds=workBounds)
 
 AICweights(mpos,mp)
 
@@ -287,14 +299,14 @@ df <- data.frame(do.call(rbind,plmpos$estimates$beta$bath[c("1 -> 2","2 -> 3","3
 color_mapping <- setNames(unique(df$cols), unique(df$gamma))
 pdf("examples/ses/gammaBath.pdf",width=11,height=8)
 ggplot(df, aes(x = bath, group = gamma)) +
-     geom_ribbon(aes(ymin = lci, ymax = uci, fill = gamma), alpha = 0.5) +
-     geom_line(aes(y = est, color = gamma), linewidth = 1.5, alpha = 0.5) +
-     scale_fill_manual(name = "State transition", values = color_mapping) +
-     scale_color_manual(name = "State transition", values = color_mapping) +
-     labs(
-       x = "depth (km)",
-       y = "Probability"
-     ) + theme(text = element_text(size = 15))
+  geom_ribbon(aes(ymin = lci, ymax = uci, fill = gamma), alpha = 0.5) +
+  geom_line(aes(y = est, color = gamma), linewidth = 1.5, alpha = 0.5) +
+  scale_fill_manual(name = "State transition", values = color_mapping) +
+  scale_color_manual(name = "State transition", values = color_mapping) +
+  labs(
+    x = "depth (km)",
+    y = "Probability"
+  ) + theme(text = element_text(size = 15))
 dev.off()
 
 pdf("examples/ses/mpos.pdf",width=12,height=6)
@@ -303,25 +315,32 @@ dev.off()
 
 mposdens <- plotDens(mpos)
 
-# agreement in decoded states
+## agreement in decoded states
 mean(viterbi(mpos)==viterbi(m2))
-caret::confusionMatrix(data=factor(viterbi(m2)),reference=factor(viterbi(mpos)))
-
-# do a bunch of simulations (takes a while)
-simout <- list()
-for(seed in 1:100){
-  set.seed(seed,kind="Mersenne-Twister",normal.kind = "Inversion")
-  simout[[seed]] <- simMod(mpos,initialPosition=initPos,centers=center,spCovs=spatialCovs,gradient=TRUE,retrySims=100,mask=mask)
-}
+cmb <- caret::confusionMatrix(data=factor(viterbi(m2)),reference=factor(viterbi(mpos)))
+#cm_to_latex(
+#  cm = cmb,
+#  caption = "Contingency table comparing the Viterbi-decoded state assignments for the 4-state biased random walk step and turn model (``STfull'') and the position-based potential function model (``pot'') in the southern elephant seal example.",
+#  label = "tab:bcrwstates",
+#  pred_name = "STfull",
+#  ref_name = "pot",
+#  row_names = latexNames,
+#  col_names = latexNames
+#)
 
 timeInStates(mpos)
-apply(do.call(rbind,lapply(simout,function(x) table(x$states)/nrow(x))),2,mean)
+## do a bunch of simulations (takes a while)
+#simout <- list()
+#for(seed in 1:100){
+#  set.seed(seed,kind="Mersenne-Twister",normal.kind = "Inversion")
+#  simout[[seed]] <- simMod(mpos,initialPosition=initPos,centers=center,spCovs=spatialCovs,gradient=TRUE,retrySims=100)
+#}
+#apply(do.call(rbind,lapply(simout,function(x) table(x$states)/nrow(x))),2,mean)
 
 bathmpos <- list()
 bathmpos$state2 <- plotHist(mpos,state=2)
 bathmpos$state3 <- plotHist(mpos,state=3)
 
-# simulate without mask
 set.seed(97,kind="Mersenne-Twister",normal.kind = "Inversion")
 simpos <- simMod(mpos,initialPosition=initPos,centers=center,spCovs=spatialCovs,gradient=TRUE,retrySims=100)
 

@@ -10,10 +10,11 @@ simMod <- function(model,obsPerAnimal=1000,nbAnimals=6,covs=data.frame(time=(1:1
 
   remInd <- NULL
   for(i in 1:length(unique(sim$ID))){
-    colInd <- which(sim$ID==unique(sim$ID)[i] & sim$states==4 & abs(sim$x-centroid[1])<res(spatialCovs$d2coast)[1]/2 & abs(sim$y-centroid[2])<res(spatialCovs$d2coast)[2]/2)
-    if(length(colInd)) remInd <- c(remInd,colInd[2]:(obsPerAnimal*i)) # truncate tracks once back to colony
+    colInd <- which((sim$ID==unique(sim$ID)[i] & sim$states==4) & ((sqrt((sim$x-center[1])^2+(sim$y-center[2])^2)<0.1)))
+    if(length(colInd) && (colInd[1]+1)<(obsPerAnimal*i)) remInd <- c(remInd,(colInd[1]+1):(obsPerAnimal*i)) # truncate tracks once back to colony
   }
   if(length(remInd)) sim <- sim[-remInd,]
+  names(spatialCovs$land) <- "land"
   if(plot) momentuHMM::plotSpatialCov(sim,spatialCovs$land,states=sim$states,stateNames=model$stateNames,color=viridis::viridis(10))
   return(sim)
 }
@@ -246,7 +247,7 @@ prPlot <- function(m,what="step"){
       theme(
         panel.grid.major = element_blank(),
         panel.grid.minor = element_blank()
-      )
+      ) + scale_y_continuous(breaks=seq(-7,7,by=3.5),limits=c(-7,7))
     
     acf_data <- stats::acf(prdf[[i]], na.action = na.pass, plot = FALSE)
     
@@ -366,3 +367,92 @@ create_latex_table <- function(dfmu, dfbeta) {
   cat(latex_string)
 }
 
+cm_to_latex <- function(cm,
+                        caption = "My Caption",
+                        label = "tab:my-label",
+                        pred_name = "Prediction",
+                        ref_name = "Reference",
+                        row_names = NULL,
+                        col_names = NULL) {
+  
+  # Extract the confusion matrix table
+  mat <- as.matrix(cm$table)
+  
+  # Use provided names or default to original dimnames
+  if (is.null(row_names)) {
+    row_names <- rownames(mat)
+  }
+  if (is.null(col_names)) {
+    col_names <- colnames(mat)
+  }
+  
+  # Calculate row and column totals
+  row_totals <- rowSums(mat)
+  col_totals <- colSums(mat)
+  
+  # Combine matrix with totals
+  mat_ext <- rbind(cbind(mat, Total = row_totals), Total = c(col_totals, sum(col_totals)))
+  
+  # Update row and column names for the extended matrix
+  final_row_names <- c(row_names, "Total")
+  final_col_names <- c(col_names, "Total")
+  
+  # --- Start building the LaTeX string ---
+  
+  # Header
+  latex_string <- paste0(
+    "\\begin{table}[h!]\n",
+    "\\centering\n",
+    "\\caption{", caption, "}\n",
+    "\\label{", label, "}\n",
+    "\\begin{tabular}{@{}l", paste(rep("c", ncol(mat_ext)), collapse = ""), "@{}}\n",
+    "\\toprule\n"
+  )
+  
+  # Column titles
+  num_cols <- length(final_col_names)
+  latex_string <- paste0(
+    latex_string,
+    "& \\multicolumn{", num_cols, "}{c}{\\textbf{", ref_name, "}} \\\\\n",
+    "\\cmidrule(l){2-", num_cols + 1, "}\n"
+  )
+  
+  # Sub-column titles
+  latex_string <- paste0(
+    latex_string,
+    "\\textbf{", pred_name, "} & ",
+    paste(final_col_names, collapse = " & "),
+    " \\\\\n",
+    "\\midrule\n"
+  )
+  
+  # Table body
+  for (i in 1:nrow(mat_ext)) {
+    # The last row's final cell should be empty
+    if (i == nrow(mat_ext)) {
+      mat_ext[i, ncol(mat_ext)] <- ""
+    }
+    
+    row_content <- paste(mat_ext[i, ], collapse = " & ")
+    latex_string <- paste0(
+      latex_string,
+      "\\text{", final_row_names[i], "} & ",
+      row_content,
+      " \\\\\n"
+    )
+  }
+  
+  # Footer
+  latex_string <- paste0(
+    latex_string,
+    "\\bottomrule\n",
+    "\\end{tabular}\n",
+    "\\end{table}\n"
+  )
+  
+  # Print the result to the console
+  cat(latex_string)
+  
+  # Invisibly return the string
+  invisible(latex_string)
+}
