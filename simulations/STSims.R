@@ -162,11 +162,11 @@ for(sc in 1:length(scenarios)){
   #vioplot::vioplot(viterbi~model,data=sdf)
   #abline(h=0.95,col=2,lty=2)
   STplot$viterbi[[scenarios[sc]]] <- ggplot(sdf, aes(x=model, y=viterbi)) + ylab("Proportion correct state assignments")+
-    geom_violin(trim=TRUE,fill="grey")+ geom_boxplot(width=0.05)+geom_hline(yintercept=0.95,linetype=2,col=2)+ scale_y_continuous(limits = c(0.7,1)) 
+    geom_violin(trim=TRUE,fill="grey")+ geom_boxplot(width=0.05)+geom_hline(yintercept=0.95,linetype=2,col=2)+ scale_y_continuous(limits = c(0.5,1)) 
   #vioplot::vioplot(beta12~model,data=sdf)
   #abline(h=beta0[2],col=2,lty=2)
   STplot$beta12[[scenarios[sc]]] <- ggplot(sdf, aes(x=model, y=beta12)) +ylab(expression(beta[paste(1,",",2,",",1)]))+
-    geom_violin(trim=FALSE,fill="grey")+ geom_boxplot(width=0.1)+geom_hline(yintercept=beta0[2],linetype=2,col=2)+ scale_y_continuous(limits = c(-1.3,0.25)) 
+    geom_violin(trim=FALSE,fill="grey")+ geom_boxplot(width=0.1)+geom_hline(yintercept=beta0[2],linetype=2,col=2)+ scale_y_continuous(limits = c(-1.3,0.3)) 
   #vioplot::vioplot(beta21~model,data=sdf)
   #abline(h=beta0[4],col=2,lty=2)
   STplot$beta21[[scenarios[sc]]] <- ggplot(sdf, aes(x=model, y=beta21)) +ylab(expression(beta[paste(2,",",1,",",1)]))+

@@ -155,10 +155,10 @@ for(sc in 1:length(scenarios)){
   #vioplot::vioplot(beta12~model,data=sdf)
   #abline(h=beta0[2],col=2,lty=2)
   crwSTplot$beta12[[scenarios[sc]]] <- ggplot(sdf, aes(x=model, y=beta12)) +ylab(expression(beta[12]))+
-    geom_violin(trim=FALSE,fill="grey")+ geom_boxplot(width=0.1)+geom_hline(yintercept=beta0[2],linetype=2,col=2)+ scale_y_continuous(limits = c(-1.1,0.3)) 
+    geom_violin(trim=FALSE,fill="grey")+ geom_boxplot(width=0.1)+geom_hline(yintercept=beta0[2],linetype=2,col=2)+ scale_y_continuous(limits = c(-1.3,0.3)) 
   #vioplot::vioplot(beta21~model,data=sdf)
   #abline(h=beta0[4],col=2,lty=2)
   crwSTplot$beta21[[scenarios[sc]]] <- ggplot(sdf, aes(x=model, y=beta21)) +ylab(expression(beta[21]))+
-    geom_violin(trim=FALSE,fill="grey")+ geom_boxplot(width=0.1)+geom_hline(yintercept=beta0[4],linetype=2,col=2)+ scale_y_continuous(limits = c(-0.1,0.9))
+    geom_violin(trim=FALSE,fill="grey")+ geom_boxplot(width=0.1)+geom_hline(yintercept=beta0[4],linetype=2,col=2)+ scale_y_continuous(limits = c(-0.25,1))
 }
 save(crwSTplot,file="simulations/crwSTplots.RData")

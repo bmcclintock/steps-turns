@@ -119,6 +119,13 @@
 
 \begin{figure}
     \centering
+    \includegraphics[width=.75\textwidth]{../simulations/STDensPlots.pdf}
+    \caption{Realized step lengths and turn angles for a single dataset generated from a standard 2-state step and turn model with ``low'' (top row), ``moderate'' (middle row), and ``high'' (bottom row) levels of overlap in the state-dependent observation distributions. State-dependent curves were computed using a Gaussian kernel density estimator.}
+    \label{fig:STDensPlots}
+\end{figure}
+
+\begin{figure}
+    \centering
     \includegraphics[width=.75\textwidth]{../simulations/spatialStudyplotDens.pdf}
     \caption{Realized step lengths and turn angles for a single dataset generated from a 2-state Langevin-based model with ``low'' (top row), ``moderate'' (middle row), and ``high'' (bottom row) levels of overlap in the state-dependent observation distributions. State-dependent curves were computed using a Gaussian kernel density estimator.}
     \label{fig:spatialStudyplotDens}
@@ -129,7 +136,7 @@
     \centering
     \includegraphics[width=.75\textwidth]{../simulations/spatialStudyplotDens_noLangevin.pdf}
     \caption{Realized step lengths and turn angles for a single dataset generated from a 2-state potential function model with ``low'' (top row), ``moderate'' (middle row), and ``high'' (bottom row) levels of overlap in the state-dependent observation distributions. State-dependent curves were computed using a Gaussian kernel density estimator.}
-    \label{fig:spatialStudyplotDens}
+    \label{fig:spatialStudyplotDens_noLangevin}
 \end{figure}
 
 \begin{figure}
@@ -139,6 +146,409 @@
     Three models were fitted to each simulated dataset: 1) ``crwpos''; 2) ``crwST''; and 3) the standard 2-state step and turn HMM (``ST'').}
     \label{fig:crwBeta12Plots}
 \end{figure}
+
+\FloatBarrier
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\textwidth]{../simulations/prcrw_step_qq.pdf}
+    \caption{Example pseudo-residual QQ plots for ``crwpos'' (top row), ``crwST'' (middle row), and ``ST'' (bottom row) models fitted to data generated from the ``crwpos'' model under ``low'' (left column), ``moderate'' (middle column), and ``high'' (right column) degrees of overlap in the state-dependent observation distribution parameters. Pseudo-residuals are for the Mahalanobis distance of locations (``mu'') for ``crwpos'' and step lengths for ``crwST'' and ``ST''.}
+    \label{fig:prcrw_step_qq}
+\end{figure}
+
+%\begin{figure}
+%    \centering
+%    \includegraphics[width=0.9\textwidth]{../simulations/prcrw_low_ST_step_qq.pdf}
+%    \caption{Step length pseudo-residual QQ plots for the ``ST'' model fitted to 100 data sets generated from the ``crwpos'' model under the ``low'' degree of overlap in the state-dependent observation distribution parameters.}
+%    \label{fig:prcrw_low_ST_step_qq}
+%\end{figure}
+
+%\begin{figure}
+%    \centering
+%    \includegraphics[width=0.9\textwidth]{../simulations/prcrw_moderate_ST_step_qq.pdf}
+%    \caption{Step length pseudo-residual QQ plots for the ``ST'' model fitted to 100 data sets generated from the ``crwpos'' model under the ``moderate'' degree of overlap in the state-dependent observation distribution parameters.}
+%    \label{fig:prcrw_moderate_ST_step_qq}
+%\end{figure}
+
+%\begin{figure}
+%    \centering
+%    \includegraphics[width=0.9\textwidth]{../simulations/prcrw_high_ST_step_qq.pdf}
+%    \caption{Step length pseudo-residual QQ plots for the ``ST'' model fitted to 100 data sets generated from the ``crwpos'' model under the ``high'' degree of overlap in the state-dependent observation distribution parameters.}
+%    \label{fig:prcrw_high_ST_step_qq}
+%\end{figure}
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\textwidth]{../simulations/prcrw_step_acf.pdf}
+    \caption{Example pseudo-residual ACF plots for ``crwpos'' (top row), ``crwST'' (middle row), and ``ST'' (bottom row) models fitted to data generated from the ``crwpos'' model under ``low'' (left column), ``moderate'' (middle column), and ``high'' (right column) degrees of overlap in the state-dependent observation distribution parameters. Pseudo-residuals are for the Mahalanobis distance of locations (``mu'') for ``crwpos'' and step lengths for ``crwST'' and ``ST''.}
+    \label{fig:prcrw_step_acf}
+\end{figure}
+
+%\begin{figure}
+%    \centering
+%    \includegraphics[width=0.9\textwidth]{../simulations/prcrw_low_ST_step_acf.pdf}
+%    \caption{Step length pseudo-residual ACF plots for the ``ST'' model fitted to 100 data sets generated from the ``crwpos'' model under the ``low'' degree of overlap in the state-dependent observation distribution parameters.}
+%    \label{fig:prcrw_low_ST_step_acf}
+%\end{figure}
+
+%\begin{figure}
+%    \centering
+%    \includegraphics[width=0.9\textwidth]{../simulations/prcrw_moderate_ST_step_acf.pdf}
+%    \caption{Step length pseudo-residual ACF plots for the ``ST'' model fitted to 100 data sets generated from the ``crwpos'' model under the ``moderate'' degree of overlap in the state-dependent observation distribution parameters.}
+%    \label{fig:prcrw_moderate_ST_step_acf}
+%\end{figure}
+
+%\begin{figure}
+%    \centering
+%    \includegraphics[width=0.9\textwidth]{../simulations/prcrw_high_ST_step_acf.pdf}
+%    \caption{Step length pseudo-residual ACF plots for the ``ST'' model fitted to 100 data sets generated from the ``crwpos'' model under the ``high'' degree of overlap in the state-dependent observation distribution parameters.}
+%    \label{fig:prcrw_high_ST_step_acf}
+%\end{figure}
+
+\FloatBarrier
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\textwidth]{../simulations/prcrw_angle_qq.pdf}
+    \caption{Example pseudo-residual QQ plots for ``crwpos'' (top row), ``crwST'' (middle row), and ``ST'' (bottom row) models fitted to data generated from the ``crwpos'' model under ``low'' (left column), ``moderate'' (middle column), and ``high'' (right column) degrees of overlap in the state-dependent observation distribution parameters. Pseudo-residuals are for the Mahalanobis distance of locations (``mu'') for ``crwpos'' and turn angles for ``crwST'' and ``ST''.}
+    \label{fig:prcrw_angle_qq}
+\end{figure}
+
+%\begin{figure}
+%    \centering
+%    \includegraphics[width=0.9\textwidth]{../simulations/prcrw_low_ST_angle_qq.pdf}
+%    \caption{Turn angle pseudo-residual QQ plots for the ``ST'' model fitted to 100 data sets generated from the ``crwpos'' model under the ``low'' degree of overlap in the state-dependent observation distribution parameters.}
+%    \label{fig:prcrw_low_ST_angle_qq}
+%\end{figure}
+
+%\begin{figure}
+%    \centering
+%    \includegraphics[width=0.9\textwidth]{../simulations/prcrw_moderate_ST_angle_qq.pdf}
+%    \caption{Turn angle pseudo-residual QQ plots for the ``ST'' model fitted to 100 data sets generated from the ``crwpos'' model under the ``moderate'' degree of overlap in the state-dependent observation distribution parameters.}
+%    \label{fig:prcrw_moderate_ST_angle_qq}
+%\end{figure}
+
+%\begin{figure}
+%    \centering
+%    \includegraphics[width=0.9\textwidth]{../simulations/prcrw_high_ST_angle_qq.pdf}
+%    \caption{Turn angle pseudo-residual QQ plots for the ``ST'' model fitted to 100 data sets generated from the ``crwpos'' model under the ``high'' degree of overlap in the state-dependent observation distribution parameters.}
+%    \label{fig:prcrw_high_ST_angle_qq}
+%\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\textwidth]{../simulations/prcrw_angle_acf.pdf}
+    \caption{Example pseudo-residual QQ plots for ``crwpos'' (top row), ``crwST'' (middle row), and ``ST'' (bottom row) models fitted to data generated from the ``crwpos'' model under ``low'' (left column), ``moderate'' (middle column), and ``high'' (right column) degrees of overlap in the state-dependent observation distribution parameters. Pseudo-residuals are for the Mahalanobis distance of locations (``mu'') for ``crwpos'' and turn angles for ``crwST'' and ``ST''.}
+    \label{fig:prcrw_angle_acf}
+\end{figure}
+
+%\begin{figure}
+%    \centering
+%    \includegraphics[width=0.9\textwidth]{../simulations/prcrw_low_ST_angle_acf.pdf}
+%    \caption{Turn angle pseudo-residual QQ plots for the ``ST'' model fitted to 100 data sets generated from the ``crwpos'' model under the ``low'' degree of overlap in the state-dependent observation distribution parameters.}
+%    \label{fig:prcrw_low_ST_angle_acf}
+%\end{figure}
+
+%\begin{figure}
+%    \centering
+%    \includegraphics[width=0.9\textwidth]{../simulations/prcrw_moderate_ST_angle_acf.pdf}
+%    \caption{Turn angle pseudo-residual QQ plots for the ``ST'' model fitted to 100 data sets generated from the ``crwpos'' model under the ``moderate'' degree of overlap in the state-dependent observation distribution parameters.}
+%    \label{fig:prcrw_moderate_ST_angle_acf}
+%\end{figure}
+
+%\begin{figure}
+%    \centering
+%    \includegraphics[width=0.9\textwidth]{../simulations/prcrw_high_ST_angle_acf.pdf}
+%    \caption{Turn angle pseudo-residual QQ plots for the ``ST'' model fitted to 100 data sets generated from the ``crwpos'' model under the ``high'' degree of overlap in the state-dependent observation distribution parameters.}
+%    \label{fig:prcrw_high_ST_angle_acf}
+%\end{figure}
+
+\FloatBarrier
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\textwidth]{../simulations/prcrwST_step_qq.pdf}
+    \caption{Example pseudo-residual QQ plots for ``crwpos'' (top row), ``crwST'' (middle row), and ``ST'' (bottom row) models fitted to data generated from the ``crwST'' model under ``low'' (left column), ``moderate'' (middle column), and ``high'' (right column) degrees of overlap in the state-dependent observation distribution parameters. Pseudo-residuals are for the Mahalanobis distance of locations (``mu'') for ``crwpos'' and step lengths for ``crwST'' and ``ST''.}
+    \label{fig:prcrwST_step_qq}
+\end{figure}
+
+%\begin{figure}
+%    \centering
+%    \includegraphics[width=0.9\textwidth]{../simulations/prcrwST_low_ST_step_qq.pdf}
+%    \caption{Pseudo-residual QQ plots for the ``ST'' model fitted to 100 data sets generated from the ``crwST'' model under the ``low'' degree of overlap in the state-dependent observation distribution parameters.}
+%    \label{fig:prcrwST_low_ST_step_qq}
+%\end{figure}
+
+%\begin{figure}
+%    \centering
+%    \includegraphics[width=0.9\textwidth]{../simulations/prcrwST_moderate_ST_step_qq.pdf}
+%    \caption{Pseudo-residual QQ plots for the ``ST'' model fitted to 100 data sets generated from the ``crwST'' model under the ``moderate'' degree of overlap in the state-dependent observation distribution parameters.}
+%    \label{fig:prcrwST_moderate_ST_step_qq}
+%\end{figure}
+
+%\begin{figure}
+%    \centering
+%    \includegraphics[width=0.9\textwidth]{../simulations/prcrwST_high_ST_step_qq.pdf}
+%    \caption{Pseudo-residual QQ plots for the ``ST'' model fitted to 100 data sets generated from the ``crwST'' model under the ``high'' degree of overlap in the state-dependent observation distribution parameters.}
+%    \label{fig:prcrwST_high_ST_step_qq}
+%\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\textwidth]{../simulations/prcrwST_step_acf.pdf}
+    \caption{Example pseudo-residual ACF plots for ``crwpos'' (top row), ``crwST'' (middle row), and ``ST'' (bottom row) models fitted to data generated from the ``crwST'' model under ``low'' (left column), ``moderate'' (middle column), and ``high'' (right column) degrees of overlap in the state-dependent observation distribution parameters. Pseudo-residuals are for the Mahalanobis distance of locations (``mu'') for ``crwpos'' and step lengths for ``crwST'' and ``ST''.}
+    \label{fig:prcrwST_step_acf}
+\end{figure}
+
+%\begin{figure}
+%    \centering
+%    \includegraphics[width=0.9\textwidth]{../simulations/prcrwST_low_ST_step_acf.pdf}
+%    \caption{Step length pseudo-residual ACF plots for the ``ST'' model fitted to 100 data sets generated from the ``crwST'' model under the ``low'' degree of overlap in the state-dependent observation distribution parameters.}
+%    \label{fig:prcrwST_low_ST_step_acf}
+%\end{figure}
+
+%\begin{figure}
+%    \centering
+%    \includegraphics[width=0.9\textwidth]{../simulations/prcrwST_moderate_ST_step_acf.pdf}
+%    \caption{Step length pseudo-residual ACF plots for the ``ST'' model fitted to 100 data sets generated from the ``crwST'' model under the ``moderate'' degree of overlap in the state-dependent observation distribution parameters.}
+%    \label{fig:prcrwST_moderate_ST_step_acf}
+%\end{figure}
+
+%\begin{figure}
+%    \centering
+%    \includegraphics[width=0.9\textwidth]{../simulations/prcrwST_high_ST_step_acf.pdf}
+%    \caption{Step length pseudo-residual ACF plots for the ``ST'' model fitted to 100 data sets generated from the ``crwST'' model under the ``high'' degree of overlap in the state-dependent observation distribution parameters.}
+%    \label{fig:prcrwST_high_ST_step_acf}
+%\end{figure}
+
+\FloatBarrier
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\textwidth]{../simulations/prcrwST_angle_qq.pdf}
+    \caption{Example pseudo-residual QQ plots for ``crwpos'' (top row), ``crwST'' (middle row), and ``ST'' (bottom row) models fitted to data generated from the ``crwST'' model under ``low'' (left column), ``moderate'' (middle column), and ``high'' (right column) degrees of overlap in the state-dependent observation distribution parameters. Pseudo-residuals are for the Mahalanobis distance of locations (``mu'') for ``crwpos'' and turn angles for ``crwST'' and ``ST''.}
+    \label{fig:prcrwST_angle_qq}
+\end{figure}
+
+%\begin{figure}
+%    \centering
+%    \includegraphics[width=0.9\textwidth]{../simulations/prcrwST_low_ST_angle_qq.pdf}
+%    \caption{Turn angle pseudo-residual QQ plots for the ``ST'' model fitted to 100 data sets generated from the ``crwST'' model under the ``low'' degree of overlap in the state-dependent observation distribution parameters.}
+%    \label{fig:prcrwST_low_ST_angle_qq}
+%\end{figure}
+
+%\begin{figure}
+%    \centering
+%    \includegraphics[width=0.9\textwidth]{../simulations/prcrwST_moderate_ST_angle_qq.pdf}
+%    \caption{Turn angle pseudo-residual QQ plots for the ``ST'' model fitted to 100 data sets generated from the ``crwST'' model under the ``moderate'' degree of overlap in the state-dependent observation distribution parameters.}
+%    \label{fig:prcrwST_moderate_ST_angle_qq}
+%\end{figure}
+
+%\begin{figure}
+%    \centering
+%    \includegraphics[width=0.9\textwidth]{../simulations/prcrwST_high_ST_angle_qq.pdf}
+%    \caption{Turn angle pseudo-residual QQ plots for the ``ST'' model fitted to 100 data sets generated from the ``crwST'' model under the ``high'' degree of overlap in the state-dependent observation distribution parameters.}
+%    \label{fig:prcrwST_high_ST_angle_qq}
+%\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\textwidth]{../simulations/prcrwST_angle_acf.pdf}
+    \caption{Example pseudo-residual QQ plots for ``crwpos'' (top row), ``crwST'' (middle row), and ``ST'' (bottom row) models fitted to data generated from the ``crwST'' model under ``low'' (left column), ``moderate'' (middle column), and ``high'' (right column) degrees of overlap in the state-dependent observation distribution parameters. Pseudo-residuals are for the Mahalanobis distance of locations (``mu'') for ``crwpos'' and turn angles for ``crwST'' and ``ST''.}
+    \label{fig:prcrwST_angle_acf}
+\end{figure}
+
+%\begin{figure}
+%    \centering
+%    \includegraphics[width=0.9\textwidth]{../simulations/prcrwST_low_ST_angle_acf.pdf}
+%    \caption{Turn angle pseudo-residual QQ plots for the ``ST'' model fitted to 100 data sets generated from the ``crwST'' model under the ``low'' degree of overlap in the state-dependent observation distribution parameters.}
+%    \label{fig:prcrwST_low_ST_angle_acf}
+%\end{figure}
+
+%\begin{figure}
+%    \centering
+%    \includegraphics[width=0.9\textwidth]{../simulations/prcrwST_moderate_ST_angle_acf.pdf}
+%    \caption{Turn angle pseudo-residual QQ plots for the ``ST'' model fitted to 100 data sets generated from the ``crwST'' model under the ``moderate'' degree of overlap in the state-dependent observation distribution parameters.}
+%    \label{fig:prcrwST_moderate_ST_angle_acf}
+%\end{figure}
+
+%\begin{figure}
+%    \centering
+%    \includegraphics[width=0.9\textwidth]{../simulations/prcrwST_high_ST_angle_acf.pdf}
+%    \caption{Turn angle pseudo-residual QQ plots for the ``ST'' model fitted to 100 data sets generated from the ``crwST'' model under the ``high'' degree of overlap in the state-dependent observation distribution parameters.}
+%    \label{fig:prcrwST_high_ST_angle_acf}
+%\end{figure}
+
+\FloatBarrier
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\textwidth]{../simulations/STViterbiPlots.pdf}
+    \caption{Violin plots for the proportion of correct Viterbi-decoded state assignments from 100 simulations with data generated from a standard 2-state step and turn HMM in the polar plane (``ST''), with three degrees of overlap in the state-dependent observation distributions: ``low'' (left panel), ``moderate'' (middle panel), and ``high'' (right panel). Three models were fitted to each simulated dataset: 1) a 2-state correlated random walk HMM in the Cartesian plane (``crwpos''); 2) a correlated step and turn HMM in the polar plane (``crwST''); and 3) ``ST''.}
+    \label{fig:STViterbiPlots}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\textwidth]{../simulations/STBetaPlots.pdf}
+    \caption{Violin plots for the estimated environmental covariate effect on transitions from state 1 to state 2 $(\beta_{1,2,1}; \text{ top row})$ and state 2 to state 1 $(\beta_{2,1,1}; \text{ bottom row})$ from 100 simulations with data generated from a standard 2-state step and turn HMM in the polar plane (``ST''), with three degrees of overlap in the state-dependent observation distributions: ``low'' (left column), ``moderate'' (middle column), and ``high'' (right column). Three models were fitted to each simulated dataset: 1) a 2-state correlated random walk HMM in the Cartesian plane (``crwpos''); 2) a correlated step and turn HMM in the polar plane (``crwST''); and 3) ``ST''.}
+    \label{fig:STBetaPlots}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\textwidth]{../simulations/prST_step_qq.pdf}
+    \caption{Example pseudo-residual QQ plots for ``crwpos'' (top row), ``crwST'' (middle row), and ``ST'' (bottom row) models fitted to data generated from the ``ST'' model under ``low'' (left column), ``moderate'' (middle column), and ``high'' (right column) degrees of overlap in the state-dependent observation distribution parameters. Pseudo-residuals are for the Mahalanobis distance of locations (``mu'') for ``crwpos'' and step lengths for ``crwST'' and ``ST''.}
+    \label{fig:prST_step_qq}
+\end{figure}
+
+%\begin{figure}
+%    \centering
+%    \includegraphics[width=0.9\textwidth]{../simulations/prST_low_crwpos_mu_qq.pdf}
+%    \caption{Pseudo-residual QQ plots for the ``crwpos'' model fitted to 100 data sets generated from the ``ST'' model under the ``low'' degree of overlap in the state-dependent observation distribution parameters.}
+%    \label{fig:prST_low_crwpos_mu_qq}
+%\end{figure}
+
+%\begin{figure}
+%    \centering
+%    \includegraphics[width=0.9\textwidth]{../simulations/prST_moderate_crwpos_mu_qq.pdf}
+%    \caption{Pseudo-residual QQ plots for the ``crwpos'' model fitted to 100 data sets generated from the ``ST'' model under the ``moderate'' degree of overlap in the state-dependent observation distribution parameters.}
+%    \label{fig:prST_moderate_crwpos_mu_qq}
+%\end{figure}
+
+%\begin{figure}
+%    \centering
+%    \includegraphics[width=0.9\textwidth]{../simulations/prST_high_crwpos_mu_qq.pdf}
+%    \caption{Pseudo-residual QQ plots for the ``crwpos'' model fitted to 100 data sets generated from the ``ST'' model under the ``high'' degree of overlap in the state-dependent observation distribution parameters.}
+%    \label{fig:prST_high_crwpos_mu_qq}
+%\end{figure}
+
+%\begin{figure}
+%    \centering
+%    \includegraphics[width=0.9\textwidth]{../simulations/prST_low_crwST_step_qq.pdf}
+%    \caption{Step length pseudo-residual QQ plots for the ``crwST'' model fitted to 100 data sets generated from the ``ST'' model under the ``low'' degree of overlap in the state-dependent observation distribution parameters.}
+%    \label{fig:prST_low_crwST_step_qq}
+%\end{figure}
+
+%\begin{figure}
+%    \centering
+%    \includegraphics[width=0.9\textwidth]{../simulations/prST_moderate_crwST_step_qq.pdf}
+%    \caption{Step length pseudo-residual QQ plots for the ``crwST'' model fitted to 100 data sets generated from the ``ST'' model under the ``moderate'' degree of overlap in the state-dependent observation distribution parameters.}
+%    \label{fig:prST_moderate_crwST_step_qq}
+%\end{figure}
+
+%\begin{figure}
+%    \centering
+%    \includegraphics[width=0.9\textwidth]{../simulations/prST_high_crwST_step_qq.pdf}
+%    \caption{Step length pseudo-residual QQ plots for the ``crwST'' model fitted to 100 data sets generated from the ``ST'' model under the ``high'' degree of overlap in the state-dependent observation distribution parameters.}
+%    \label{fig:prST_high_crwST_step_qq}
+%\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\textwidth]{../simulations/prST_step_acf.pdf}
+    \caption{Example pseudo-residual ACF plots for ``crwpos'' (top row), ``crwST'' (middle row), and ``ST'' (bottom row) models fitted to data generated from the ``ST'' model under ``low'' (left column), ``moderate'' (middle column), and ``high'' (right column) degrees of overlap in the state-dependent observation distribution parameters. Pseudo-residuals are for the Mahalanobis distance of locations (``mu'') for ``crwpos'' and step lengths for ``crwST'' and ``ST''.}
+    \label{fig:prST_step_acf}
+\end{figure}
+
+%\begin{figure}
+%    \centering
+%    \includegraphics[width=0.9\textwidth]{../simulations/prST_low_crwpos_mu_acf.pdf}
+%    \caption{Pseudo-residual ACF plots for the ``crwpos'' model fitted to 100 data sets generated from the ``ST'' model under the ``low'' degree of overlap in the state-dependent observation distribution parameters.}
+%    \label{fig:prST_low_crwpos_mu_acf}
+%\end{figure}
+
+%\begin{figure}
+%    \centering
+%    \includegraphics[width=0.9\textwidth]{../simulations/prST_moderate_crwpos_mu_acf.pdf}
+%    \caption{Pseudo-residual ACF plots for the ``crwpos'' model fitted to 100 data sets generated from the ``ST'' model under the ``moderate'' degree of overlap in the state-dependent observation distribution parameters.}
+%    \label{fig:prST_moderate_crwpos_mu_acf}
+%\end{figure}
+
+%\begin{figure}
+%    \centering
+%    \includegraphics[width=0.9\textwidth]{../simulations/prST_high_crwpos_mu_acf.pdf}
+%    \caption{Pseudo-residual ACF plots for the ``crwpos'' model fitted to 100 data sets generated from the ``ST'' model under the ``high'' degree of overlap in the state-dependent observation distribution parameters.}
+%    \label{fig:prST_high_crwpos_mu_acf}
+%\end{figure}
+
+%\begin{figure}
+%    \centering
+%    \includegraphics[width=0.9\textwidth]{../simulations/prST_low_crwST_step_acf.pdf}
+%    \caption{Step length pseudo-residual ACF plots for the ``crwST'' model fitted to 100 data sets generated from the ``ST'' model under the ``low'' degree of overlap in the state-dependent observation distribution parameters.}
+%    \label{fig:prST_low_crwST_step_acf}
+%\end{figure}
+
+%\begin{figure}
+%    \centering
+%    \includegraphics[width=0.9\textwidth]{../simulations/prST_moderate_crwST_step_acf.pdf}
+%    \caption{Step length pseudo-residual ACF plots for the ``crwST'' model fitted to 100 data sets generated from the ``ST'' model under the ``moderate'' degree of overlap in the state-dependent observation distribution parameters.}
+%    \label{fig:prST_moderate_crwST_step_acf}
+%\end{figure}
+
+%\begin{figure}
+%    \centering
+%    \includegraphics[width=0.9\textwidth]{../simulations/prST_high_crwST_step_acf.pdf}
+%    \caption{Step length pseudo-residual ACF plots for the ``crwST'' model fitted to 100 data sets generated from the ``ST'' model under the ``high'' degree of overlap in the state-dependent observation distribution parameters.}
+%    \label{fig:prST_high_crwST_step_acf}
+%\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\textwidth]{../simulations/prST_angle_qq.pdf}
+    \caption{Example pseudo-residual QQ plots for ``crwpos'' (top row), ``crwST'' (middle row), and ``ST'' (bottom row) models fitted to data generated from the ``ST'' model under ``low'' (left column), ``moderate'' (middle column), and ``high'' (right column) degrees of overlap in the state-dependent observation distribution parameters. Pseudo-residuals are for the Mahalanobis distance of locations (``mu'') for ``crwpos'' and turn angles for ``crwST'' and ``ST''.}
+    \label{fig:prST_angle_qq}
+\end{figure}
+
+%\begin{figure}
+%    \centering
+%    \includegraphics[width=0.9\textwidth]{../simulations/prST_low_crwST_angle_qq.pdf}
+%    \caption{Turn angle pseudo-residual QQ plots for the ``crwST'' model fitted to 100 data sets generated from the ``ST'' model under the ``low'' degree of overlap in the state-dependent observation distribution parameters.}
+%    \label{fig:prST_low_crwST_angle_qq}
+%\end{figure}
+
+%\begin{figure}
+%    \centering
+%    \includegraphics[width=0.9\textwidth]{../simulations/prST_moderate_crwST_angle_qq.pdf}
+%    \caption{Turn angle pseudo-residual QQ plots for the ``crwST'' model fitted to 100 data sets generated from the ``ST'' model under the ``moderate'' degree of overlap in the state-dependent observation distribution parameters.}
+%    \label{fig:prST_moderate_crwST_angle_qq}
+%\end{figure}
+
+%\begin{figure}
+%    \centering
+%    \includegraphics[width=0.9\textwidth]{../simulations/prST_high_crwST_angle_qq.pdf}
+%    \caption{Turn angle pseudo-residual QQ plots for the ``crwST'' model fitted to 100 data sets generated from the ``ST'' model under the ``high'' degree of overlap in the state-dependent observation distribution parameters.}
+%    \label{fig:prST_high_crwST_angle_qq}
+%\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\textwidth]{../simulations/prST_angle_acf.pdf}
+    \caption{Example pseudo-residual QQ plots for ``crwpos'' (top row), ``crwST'' (middle row), and ``ST'' (bottom row) models fitted to data generated from the ``ST'' model under ``low'' (left column), ``moderate'' (middle column), and ``high'' (right column) degrees of overlap in the state-dependent observation distribution parameters. Pseudo-residuals are for the Mahalanobis distance of locations (``mu'') for ``crwpos'' and turn angles for ``crwST'' and ``ST''.}
+    \label{fig:prST_angle_acf}
+\end{figure}
+
+%\begin{figure}
+%    \centering
+%    \includegraphics[width=0.9\textwidth]{../simulations/prST_low_crwST_angle_acf.pdf}
+%    \caption{Turn angle pseudo-residual ACF plots for the ``crwST'' model fitted to 100 data sets generated from the ``ST'' model under the ``low'' degree of overlap in the state-dependent observation distribution parameters.}
+%    \label{fig:prST_low_crwST_angle_acf}
+%\end{figure}
+
+%\begin{figure}
+%    \centering
+%    \includegraphics[width=0.9\textwidth]{../simulations/prST_moderate_crwST_angle_acf.pdf}
+%    \caption{Turn angle pseudo-residual ACF plots for the ``crwST'' model fitted to 100 data sets generated from the ``ST'' model under the ``moderate'' degree of overlap in the state-dependent observation distribution parameters.}
+%    \label{fig:prST_moderate_crwST_angle_acf}
+%\end{figure}
+
+%\begin{figure}
+%    \centering
+%    \includegraphics[width=0.9\textwidth]{../simulations/prST_high_crwST_angle_acf.pdf}
+%    \caption{Turn angle pseudo-residual ACF plots for the ``crwST'' model fitted to 100 data sets generated from the ``ST'' model under the ``high'' degree of overlap in the state-dependent observation distribution parameters.}
+%    \label{fig:prST_high_crwST_angle_acf}
+%\end{figure}
 
 \begin{figure}
     \centering
