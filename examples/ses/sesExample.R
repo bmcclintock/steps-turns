@@ -64,10 +64,12 @@ projCoords$time <- time
 data <- prepData(data=projCoords[,c(1:3,5)], coordNames = c("coords.x1","coords.x2"),covNames=c("time","ptime"),centers=center,spatialCovs=spatialCovs,gradient=TRUE,altCoordNames = "mu")
 
 # plot correlation between steps and turns
-allCor <- cylcop::plot_joint_box(x=data$step*1000,theta=data$angle)
+allCor <- cylcop::plot_joint_box(x=data$step*1000,theta=data$angle)+labs(title="All individuals")
 indCor <- list()
+count <- 1
 for(i in unique(data$ID)){
-  indCor[[i]] <- plot_joint_box(x=data$step[which(data$ID==i)]*1000,theta=data$angle[which(data$ID==i)])
+  indCor[[i]] <- plot_joint_box(x=data$step[which(data$ID==i)]*1000,theta=data$angle[which(data$ID==i)])+labs(title=paste("Individual",count))
+  count <- count + 1
 }
 bottom_plots <- wrap_plots(indCor, ncol = 2)
 pdf("examples/ses/sesStepTurnCor.pdf", height = 11, width = 8)

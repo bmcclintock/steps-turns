@@ -27,9 +27,11 @@ plotTracks <- function(track){
   proj4string(latlongtrack) <- myCRS
   latlongtrack <- data.frame(spTransform(latlongtrack,CRS=CRS("+proj=longlat +ellps=WGS84 +datum=WGS84")))
   
-  plot(tracks@coords[,1], tracks@coords[,2], axes=FALSE, xlab="", ylab="", col="white",xlim=c(min(tracks@coords[,1],latlongtrack$coords.x1),max(tracks@coords[,1],latlongtrack$coords.x1)),ylim=c(min(tracks@coords[,2],latlongtrack$coords.x2),max(tracks@coords[,2],latlongtrack$coords.x2)))
-  degAxis(1)
-  degAxis(2)
+  par(mar = c(5, 5, 5, 2))
+  
+  plot(tracks@coords[,1], tracks@coords[,2], axes=FALSE, xlab="Longitude", ylab="Latitude", cex.lab = 1.8, col="white",xlim=c(min(tracks@coords[,1],latlongtrack$coords.x1),max(tracks@coords[,1],latlongtrack$coords.x1)),ylim=c(min(tracks@coords[,2],latlongtrack$coords.x2),max(tracks@coords[,2],latlongtrack$coords.x2)))
+  degAxis(1, cex.axis = 1.5) # x-axis numbers
+  degAxis(2, cex.axis = 1.5) # y-axis numbers
   raster::plot(bathdat, add=TRUE,
                image=TRUE,
                step = 10000,
@@ -50,7 +52,7 @@ plotTracks <- function(track){
   }
   
   legend("topleft", legend = stateNames,
-         col = pal, lwd=2, bg="white")
+         col = pal, lwd=2, bg="white", cex = 1.2)
 }
 
 plotCor <- function(data,model,sim,patchwork=TRUE){
@@ -70,7 +72,11 @@ plotCor <- function(data,model,sim,patchwork=TRUE){
   else return(p)
 }
 
-plotDens <- function(model,binwidth=5,stateNames=NULL){
+plotDens <- function(model,binwidth=5,stateNames=NULL,
+                      title_sz = 18,  # Axis titles (e.g., "step length")
+                      text_sz  = 14,  # Axis tick numbers
+                      leg_sz   = 14  # Legend state names
+                     ){
   
   plotDat <- model$data
   plotDat$step <- plotDat$step * 1000
@@ -191,6 +197,18 @@ plotDens <- function(model,binwidth=5,stateNames=NULL){
     geom_line(data = angledf[which(angledf$state==stateNames[5]),], aes(x = x, y = y, color=stateNames[5]),linewidth=1.5,linetype=2)+
     scale_color_manual(values = COLORS, breaks=stateNames, name = "")+scale_x_continuous(breaks=c(-pi, -pi/2, 0, pi/2, pi),labels=expression(-pi, -pi/2, 0, pi/2, pi))+xlab("turn angle (radians)")
   
+  stepPlot <- stepPlot + theme(
+    axis.title = element_text(size = title_sz),
+    axis.text  = element_text(size = text_sz),
+    legend.text = element_text(size = leg_sz)
+  )
+  
+  anglePlot <- anglePlot + theme(
+    axis.title = element_text(size = title_sz),
+    axis.text  = element_text(size = text_sz),
+    legend.text = element_text(size = leg_sz)
+  )
+  
   return(list(stepPlot=stepPlot,anglePlot=anglePlot))
 }
 
@@ -282,7 +300,7 @@ prPlot <- function(m,what="step"){
   return(pl)
 }
 
-plotHist <- function(model,what="bath",state,binwidth=0.5,xl=c(-6,0),yl=c(0,550),xla="depth (km)",title=waiver()){
+plotHist <- function(model,what="bath",state,binwidth=0.5,xl=c(-6,0),yl=c(0,550),xla="sea floor depth (km)",title=waiver()){
   st <- viterbi(model)
   df <- data.frame(cov=model$data[[what]][which(st==state)])
   ggplot(df) + geom_histogram(aes(x=cov),binwidth=binwidth,boundary=xl[1],fill = "lightgrey", color = "black",na.rm=TRUE) + xlim(xl) + ylim(yl) + xlab(xla) + ylab("Frequency") + ggtitle(title) + theme(text = element_text(size = 15))

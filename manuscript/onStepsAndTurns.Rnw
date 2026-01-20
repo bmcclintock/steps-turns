@@ -363,14 +363,14 @@ For the first two sets of simulation experiments, the (Cartesian) correlated ran
 \begin{figure}
     \centering
     \includegraphics[width=0.9\textwidth]{../simulations/crwViterbiPlots.pdf}
-    \caption{Violin plots for the proportion of correct Viterbi-decoded state assignments from 100 simulations with data generated from a 2-state correlated random walk HMM in the Cartesian plane (``crwpos''; left column) and a correlated step and turn HMM in the polar plane (``crwST''; right column), with three degrees of overlap in the state-dependent observation distributions: ``low'' (top row), ``moderate'' (middle row), and ``high'' (bottom row). Three models were fitted to each simulated dataset: 1) ``crwpos''; 2) ``crwST''; and 3) the standard 2-state step and turn HMM (``ST'').}
+    \caption{Violin plots for the proportion of correct Viterbi-decoded state assignments from 100 simulations with data generated from a 2-state correlated random walk HMM in the Cartesian plane (``crwpos''; left column) and a correlated step and turn HMM in the polar plane (``crwST''; right column), with three degrees of overlap in the state-dependent observation distributions: ``low'' (top row), ``moderate'' (middle row), and ``high'' (bottom row). Three models were fitted to each simulated dataset: 1) ``crwpos''; 2) ``crwST''; and 3) the standard 2-state step and turn HMM (``ST''). Dashed red lines indicate 95\% correct state assignment.}
     \label{fig:crwViterbiPlots}
 \end{figure}
 
 \begin{figure}
     \centering
     \includegraphics[width=0.9\textwidth]{../simulations/crwBeta21Plots.pdf}
-    \caption{Violin plots for the estimated environmental covariate effect on transitions from state 2 to state 1 $(\beta_{2,1,1})$ from 100 simulations with data generated from a 2-state correlated random walk HMM in the Cartesian plane (``crwpos''; left column) and a correlated step and turn HMM in the polar plane (``crwST''; right column), with three degrees of overlap in the state-dependent observation distributions: ``low'' (top row), ``moderate'' (middle row), and ``high'' (bottom row). Three models were fitted to each simulated dataset: 1) ``crwpos''; 2) ``crwST''; and 3) the standard 2-state step and turn HMM (``ST'').}
+    \caption{Violin plots for the estimated environmental covariate effect on transitions from state 2 to state 1 $(\beta_{2,1,1})$ from 100 simulations with data generated from a 2-state correlated random walk HMM in the Cartesian plane (``crwpos''; left column) and a correlated step and turn HMM in the polar plane (``crwST''; right column), with three degrees of overlap in the state-dependent observation distributions: ``low'' (top row), ``moderate'' (middle row), and ``high'' (bottom row). Three models were fitted to each simulated dataset: 1) ``crwpos''; 2) ``crwST''; and 3) the standard 2-state step and turn HMM (``ST''). Dashed red lines indicate true parameter values.}
     \label{fig:crwBeta21Plots}
 \end{figure}
 
@@ -383,14 +383,14 @@ as the degree of overlap in the realized state-specific step length and turn ang
 \begin{figure}
     \centering
     \includegraphics[width=0.9\textwidth]{../simulations/spatViterbiPlots.pdf}
-    \caption{Violin plots for the proportion of correct Viterbi-decoded state assignments from simulations with data generated from a 2-state Langevin-based HMM, with three degrees of overlap in the state-dependent observation distributions: ``low'' (top row), ``moderate'' (middle row), and ``high'' (bottom row). Four models were fitted to each simulated dataset: 1) the data-generating model (``lang''); 2) the standard 2-state step and turn HMM (``ST''); 3) a 2-state step and turn HMM including the habitat covariates on the observation distribution parameters (``STcov''); and 4) a 2-state step and turn HMM including transformed gradient-based habitat covariates on the observation distribution parameters.}
+    \caption{Violin plots for the proportion of correct Viterbi-decoded state assignments from simulations with data generated from a 2-state Langevin-based HMM, with three degrees of overlap in the state-dependent observation distributions: ``low'' (top row), ``moderate'' (middle row), and ``high'' (bottom row). Four models were fitted to each simulated dataset: 1) the data-generating model (``lang''); 2) the standard 2-state step and turn HMM (``ST''); 3) a 2-state step and turn HMM including the habitat covariates on the observation distribution parameters (``STcov''); and 4) a 2-state step and turn HMM including transformed gradient-based habitat covariates on the observation distribution parameters. Dashed red lines indicate 95\% correct state assignment.}
     \label{fig:spatViterbiPlots}
 \end{figure}
 
 \begin{figure}
     \centering
     \includegraphics[width=0.9\textwidth]{../simulations/spatBeta21Plots.pdf}
-    \caption{Violin plots for the estimated environmental covariate effects on transitions from state 2 to state 1 $\left(\beta_{2,1,k};k=1,\ldots,4\right)$ from 100 simulations with data generated from a 2-state Langevin-based HMM, with three degrees of overlap in the state-dependent observation distributions: ``low'' (left column), ``moderate'' (middle column), and ``high'' (right column). Four models were fitted to each simulated dataset: 1) the data-generating model (``lang''); 2) the standard 2-state step and turn HMM (``ST''); 3) a 2-state step and turn HMM including the habitat covariates on the observation distribution parameters (``STcov''); and 4) a 2-state step and turn HMM including transformed gradient-based habitat covariates on the observation distribution parameters. For readability, the y-axis has been truncated at $(-1.75,1.75)$.}
+    \caption{Violin plots for the estimated environmental covariate effects on transitions from state 2 to state 1 $\left(\beta_{2,1,k};k=1,\ldots,4\right)$ from 100 simulations with data generated from a 2-state Langevin-based HMM, with three degrees of overlap in the state-dependent observation distributions: ``low'' (left column), ``moderate'' (middle column), and ``high'' (right column). Four models were fitted to each simulated dataset: 1) the data-generating model (``lang''); 2) the standard 2-state step and turn HMM (``ST''); 3) a 2-state step and turn HMM including the habitat covariates on the observation distribution parameters (``STcov''); and 4) a 2-state step and turn HMM including transformed gradient-based habitat covariates on the observation distribution parameters. Dashed red lines indicate true parameter values. For readability, the y-axis has been truncated at $(-1.75,1.75)$.}
     \label{fig:spatBeta21Plots}
 \end{figure}
 
@@ -501,6 +501,7 @@ The findings and conclusions in the manuscript are those of the author(s) and do
 %B.T.M. conceived and wrote the manuscript.
 %
 \section*{Data accessibility}
+All data and code to reproduce the analyses are available at \url{https://github.com/bmcclintock/steps-turns} and will be published on Zenodo upon acceptance.
 
 \bibliographystyle{mee}
 \bibliography{master}
