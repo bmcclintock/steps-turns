@@ -1,54 +1,4 @@
-\documentclass[12pt]{article}\usepackage[]{graphicx}\usepackage[]{xcolor}
-% maxwidth is the original width if it is less than linewidth
-% otherwise use linewidth (to make sure the graphics do not exceed the margin)
-\makeatletter
-\def\maxwidth{ %
-  \ifdim\Gin@nat@width>\linewidth
-    \linewidth
-  \else
-    \Gin@nat@width
-  \fi
-}
-\makeatother
-
-\definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
-\newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
-\newcommand{\hlsng}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
-\newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
-\newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
-\newcommand{\hldef}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
-\newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
-\newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
-\newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
-\newcommand{\hlkwd}[1]{\textcolor[rgb]{0.737,0.353,0.396}{\textbf{#1}}}%
-\let\hlipl\hlkwb
-
-\usepackage{framed}
-\makeatletter
-\newenvironment{kframe}{%
- \def\at@end@of@kframe{}%
- \ifinner\ifhmode%
-  \def\at@end@of@kframe{\end{minipage}}%
-  \begin{minipage}{\columnwidth}%
- \fi\fi%
- \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
- \colorbox{shadecolor}{##1}\hskip-\fboxsep
-     % There is no \\@totalrightmargin, so:
-     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
- \MakeFramed {\advance\hsize-\width
-   \@totalleftmargin\z@ \linewidth\hsize
-   \@setminipage}}%
- {\par\unskip\endMakeFramed%
- \at@end@of@kframe}
-\makeatother
-
-\definecolor{shadecolor}{rgb}{.97, .97, .97}
-\definecolor{messagecolor}{rgb}{0, 0, 0}
-\definecolor{warningcolor}{rgb}{1, 0, 1}
-\definecolor{errorcolor}{rgb}{1, 0, 0}
-\newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
-
-\usepackage{alltt}
+\documentclass[12pt]{article}
 \usepackage[latin9]{inputenc}
 \usepackage{geometry}
 \geometry{verbose}
@@ -91,12 +41,21 @@
        {.5\baselineskip}%
        {\normalfont\normalsize\bfseries\it}}
 \makeatother
-\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+
+\usepackage{Sweave}
 \begin{document}
+\input{onStepsAndTurns-concordance}
 
 %%TC:ignore
 
-
+\begin{Schunk}
+\begin{Sinput}
+> library(knitr)
+> opts_chunk$set(
++ concordance=TRUE
++ )
+\end{Sinput}
+\end{Schunk}
 
 % set margin to 4cm for title page
 %\newgeometry{margin=4cm}
@@ -157,12 +116,15 @@
 \newgeometry{margin=3cm}
 
 \noindent \textbf{Abstract}\\
-\textbf{1.} Hidden Markov models (HMMs) based on polar coordinates (i.e., step lengths and turn angles) have become very popular for inferring animal movement behavior states (e.g., ``foraging'', ``transit'') from biotelemetry data. HMMs using these metrics to characterize correlated random walks are attractive because they are relatively easy to implement and interpret. However, such ``step and turn'' HMMs tend to suffer from three key drawbacks: 1) they unrealistically assume that steps and turns are independent (conditional on the current state); 2) they are typically blind to the spatial mechanisms that give rise to certain movement behaviors (e.g., resource selection); and 3) they are not particularly amenable to temporally-irregular (i.e., continuous-time) observations.\\
+\textbf{1.} Hidden Markov models (HMMs) based on polar coordinates (i.e., step lengths and turn angles) are ubiquitous for making inference on animal movement behavior states (e.g., ``foraging'', ``transit'') from biotelemetry data. HMMs using these metrics to characterize correlated random walks are attractive because they are relatively easy to implement and interpret. However, such ``step and turn'' HMMs tend to suffer from three key drawbacks: 1) they unrealistically assume that steps and turns are independent (conditional on the current state); 2) they are typically blind to the spatial mechanisms that give rise to certain movement behaviors (e.g., resource selection); and 3) they are not particularly amenable to temporally-irregular (e.g., continuous-time) observations.\\
 \textbf{2.} We investigate these drawbacks using simulation, where data were generated from multistate bivariate normal random walks in the Cartesian plane. We show that steps and turns calculated from correlated random walks on the Cartesian plane are not conditionally independent, and HMMs using these metrics can perform poorly unless the corresponding state-dependent observation distributions in the polar plane share virtually no support. This trend was exacerbated in more realistic simulations where movements followed environmental gradients (e.g., prey fields, habitat type, ocean currents)% in the Cartesian plane
 , but performance was somewhat improved in spatially-explicit step and turn HMMs that included these environmental gradients in both observation distributions.\\
-\textbf{3.} Unless animals are indeed making complex movement decisions in the (independent) polar plane in response to their internal and external environment, our results suggest that alternatives should be considered instead of simply defaulting to standard step and turn HMMs. As a potentially more robust alternative, we encourage formulating movement HMMs on the Cartesian coordinates directly as a multistate bivariate (or trivariate) normal random walk. %This is demonstrated in two case studies using 2D elephant seal data and 3D harbor porpoise data. 
+\textbf{3.} To aid practitioners in determining whether or not steps and turns are indeed conditionally independent, we develop a correlated step and turn HMM that is directly comparable to conventional step and turn HMMs using standard model diagnostics and/or information-theoretic approaches.  All HMMs considered here can be simulated and fitted by maximum likelihood methods using existing software. We hope this provides a potential workflow for practitioners to first assess competing movement metrics and then choose the most appropriate HMM formulation for their system and behaviors of interest.\\
+\textbf{4.} 
+%Unless animals are indeed making complex movement decisions about steps and turns in response to their internal and external environment, our results suggest that alternatives should be considered instead of simply defaulting to standard step and turn HMMs. 
+As a potentially more robust alternative to polar coordinate HMMs, we encourage formulating movement HMMs on the Cartesian coordinates directly as a multistate bivariate (or trivariate) normal random walk. %This is demonstrated in two case studies using 2D elephant seal data and 3D harbor porpoise data. 
 We demonstrate this in a case study using southern elephant seal location data. In addition to allowing correlation in the steps and turns to be capitalized upon in the identification of latent states, position- or velocity-based movement HMMs are much more amenable to including spatial mechanisms that are driving movements (e.g., via gradient-based potential functions) and continuous-time formulations than their polar-based counterparts. Our findings could also have implications for other movement models that utilize polar coordinates, such as step selection functions that link movement and habitat selection.\\
-\textbf{4.} To aid practitioners in determining whether or not steps and turns are indeed conditionally independent, we develop a correlated step and turn HMM that is directly comparable to conventional step and turn HMMs using standard model diagnostics and/or information-theoretic approaches.  All HMMs considered here can be simulated and fitted by maximum likelihood methods using existing software. We hope this provides a potential workflow for practitioners to first assess competing movement metrics and then choose the most appropriate HMM formulation for their system and behaviors of interest.\\
+
 \noindent \textbf{Keywords: animal biotelemetry, correlated random walk, latent Markov model, movement ecology, polar coordinates, state-switching, tracking data} 
 
 \global\long\def\baselinestretch{1.0}
@@ -171,9 +133,8 @@ We demonstrate this in a case study using southern elephant seal location data. 
 %%TC:endignore
  
 
-
 \section{Introduction}
-Hidden Markov models \citep[HMMs;][]{ZucchiniEtAl2016} are now routinely used for inferring movement behavior states (e.g., ``resting'', ``foraging'', ``transit'') from animal biotelemetry data \citep[e.g.,][]{LangrockEtAl2012,nickel2021energetics,gillies2023boldness,bassing2024predator}. HMMs are time series models composed of a (possibly multivariate) observation process, in which each data stream is generated by $N$ state-dependent probability distributions, and where the unobservable (hidden) state sequence $(S_t\in\{1,\ldots,N\},t=1,\ldots,T)$ is assumed to be a Markov chain. The state sequence of the Markov chain is governed by (typically first-order) state transition probabilities, $\gamma_{ij}^{(t)}=\text{Pr}(S_{t+1}=j \mid S_t=i)$ for $i,j=1,\ldots,N$, and an initial distribution ${\boldsymbol \delta}^{(0)}$. Although there are many potential movement metrics \citep[e.g.,][]{McClintockEtAl2014b}, the vast majority of HMM applications characterize the multistate correlated random walk observation process as a discrete-time series of step lengths $(l_t > 0)$ and turn angles $\left(a_t \in (-\pi,\pi]\right)$ for $t \in \{1,2,\ldots,T\}$:
+Hidden Markov models \citep[HMMs;][]{ZucchiniEtAl2016} are now routinely used for inferring movement behavior states (e.g., ``resting'', ``foraging'', ``transit'') from animal biotelemetry data \citep[][]{LangrockEtAl2012,nickel2021energetics,gillies2023boldness,bassing2024predator}. HMMs are time series models composed of a (possibly multivariate) observation process, in which each data stream is generated by $N$ state-dependent probability distributions, and where the unobservable (hidden) state sequence $(S_t\in\{1,\ldots,N\},t=1,\ldots,T)$ is assumed to be a Markov chain. The state sequence of the Markov chain is governed by (typically first-order) state transition probabilities, $\gamma_{ij}^{(t)}=\text{Pr}(S_{t+1}=j \mid S_t=i)$ for $i,j=1,\ldots,N$, and an initial distribution ${\boldsymbol \delta}^{(0)}$. Although there are many potential movement metrics \citep[e.g.,][]{McClintockEtAl2014b}, the vast majority of HMM applications characterize the multistate correlated random walk observation process as a discrete-time series of step lengths $(l_t > 0)$ and turn angles $\left(a_t \in (-\pi,\pi]\right)$ for $t \in \{1,2,\ldots,T\}$:
 \begin{equation*}
   l_t = \sqrt{\left(x_{t+1} - x_t\right)^2+\left(y_{t+1} - y_t\right)^2}
 \end{equation*}
@@ -189,17 +150,17 @@ and
 \begin{equation*}
   a_t^* = \text{atan2}{\left(\frac{y_{t+1}-y_t}{x_{t+1}-x_t}\right)} - \text{atan2}{\left(\frac{y_t-y_{t-1}}{x_t-x_{t-1}}\right)},
 \end{equation*}
-\begin{equation*}
-  \text{atan2}\left(y,x\right) =
-  \begin{cases}
-    \arctan\left(\frac{y}{x}\right) & \text{if } x>0 \\
-    \arctan\left(\frac{y}{x}\right)+\pi & \text{if } x<0 \text{ and } y \ge 0 \\
-    \arctan\left(\frac{y}{x}\right)-\pi & \text{if } x<0 \text{ and } y < 0 \\
-    \frac{\pi}{2} & \text{if } x=0 \text{ and } y > 0 \\
-    -\frac{\pi}{2} & \text{if } x=0 \text{ and } y < 0 \\
-    \text{undefined} & \text{if } x=0 \text{ and } y=0
-  \end{cases},
-\end{equation*}
+% \begin{equation*}
+%   \text{atan2}\left(y,x\right) =
+%   \begin{cases}
+%     \arctan\left(\frac{y}{x}\right) & \text{if } x>0 \\
+%     \arctan\left(\frac{y}{x}\right)+\pi & \text{if } x<0 \text{ and } y \ge 0 \\
+%     \arctan\left(\frac{y}{x}\right)-\pi & \text{if } x<0 \text{ and } y < 0 \\
+%     \frac{\pi}{2} & \text{if } x=0 \text{ and } y > 0 \\
+%     -\frac{\pi}{2} & \text{if } x=0 \text{ and } y < 0 \\
+%     \text{undefined} & \text{if } x=0 \text{ and } y=0
+%   \end{cases},
+% \end{equation*}
 where $(x_t,y_t)$ are the observed (Cartesian) coordinates at time $t \in \{1,2,\ldots,T+1\}$ \citep[e.g.,][]{MoralesEtAl2004,LangrockEtAl2012,McClintockEtAl2012}. Common choices include the gamma distribution for $l_t$ and the von Mises distribution for $a_t$:
 \begin{equation}
 \label{eq:steps}
@@ -221,22 +182,28 @@ This formulation has advantages in that it is relatively flexible, easy to inter
 
 Because the movement process characterized by Eqs \ref{eq:steps}--\ref{eq:turns} is not spatially explicit, standard step and turn HMMs are also typically blind to spatial mechanisms that give rise to certain behaviors \citep[e.g.,][]{glennie2023hidden}. While spatial covariates can be included in the state-dependent observation distribution parameters, such implementations can be challenging and are rarely used by practitioners. For example, to include an environmental gradient (e.g., ocean surface currents, wind velocity, habitat type) in the movement process, one must transform a (Cartesian) vector field to terms that reconcile with the various parameters governing the (polar) step and turn distributions \citep[e.g.,][]{McClintockMichelot2018,PirottaEtAl2018,mul2020killer}. Unfortunately, to our knowledge there is no theoretical (or even generally agreed-upon) solution for such a transformation. Furthermore, as a discrete-time model requires temporally-regular observations, the parameters of the step and turn distributions are not time-scale invariant (and hence difficult to compare across studies), nor are these metrics particularly amenable to continuous-time formulations for irregularly sampled data \citep[but see][]{parton2017bayesian,eisaguirre2024rayleigh}. Lastly, commonly used distributions for step lengths (e.g., gamma, Weibull) do not support a lack of movement between observations (i.e., $l_t=0$) and typically require zero-inflated mixture distributions to accommodate this common occurrence (e.g., when animals are ``resting'' or ``nesting''). Such mixture distributions come at additional computational costs and draw an arbitrary distinction between a step of zero $(l_t=0 \text{ m})$ and a very small length (e.g., $l_t=0.001$ m).
 
-As a statistical method becomes more popular and accessible, it becomes more important that its advantages and disadvantages are well understood. This is particularly true for animal movement HMMs as they are increasingly utilized for inferences about complex behaviors with real-world management and conservation implications \citep[e.g.,][]{russell2014marine,CarterEtAl2020,mul2020killer,nickel2021energetics,bassing2024predator}. Here we propose alternative formulations addressing these potential limitations of standard step and turn HMMs that can still be readily implemented using existing software. We then investigate the consequences of these potential limitations and compare their performance via simulation and real-world example. By providing a workflow to first assess and then choose the most appropriate HMM formulation for a given system of interest, we hope to help practitioners avoid these potential pitfalls and extract more reliable inferences about animal movement behavior from biotelemetry data.
+As a statistical method becomes more popular and accessible, it becomes more important that its advantages and disadvantages are well understood. This is particularly true for animal movement HMMs as they are increasingly utilized for inferences about complex behaviors with real-world management and conservation implications \citep[e.g.,][]{russell2014marine,CarterEtAl2020,mul2020killer,nickel2021energetics,bassing2024predator}. Here we propose alternative model formulations addressing the potential limitations of standard step and turn HMMs. We consider both correlated polar coordinate models, as well as, models based directly on Cartesian (geographic) coordinates. All of these alternatives can be readily implemented using existing software. We then investigate the consequences of these potential limitations and compare their performance via simulation and real-world example. By providing a workflow to first assess and then choose the most appropriate HMM formulation for a given system of interest, we hope to help practitioners avoid these potential pitfalls and extract more reliable inferences about animal movement behavior from biotelemetry data.
 
 \section{Alternative animal movement HMM formulations}
 
 \subsection{Correlated polar model}
-Standard discrete-time step and turn HMMs primarily serve as a simplified version of the (multistate) continuous-time correlated random walk \citep[e.g.,][]{JohnsonEtAl2008,MichelotBlackwell2018} that assumes the steps and turns are independent. \citet{McClintockEtAl2014b} showed that the steps and turns of a continuous-time correlated random walk in the Cartesian plane are indeed dependent and provided results \citep[based on][Chapter 7]{kobayashi2011probability} that allow us to derive a discrete-time correlated random walk that preserves this conditional dependence between the (state-dependent) steps and turns:
+Standard discrete-time step and turn HMMs primarily serve as a simplified version of the (multistate) continuous-time correlated random walk \citep[CTCRW, e.g.,][]{JohnsonEtAl2008,MichelotBlackwell2018} that assumes the steps and turns are independent. Howver, \citet{McClintockEtAl2014b} showed that the steps and turns of a continuous-time correlated random walk in the Cartesian plane are indeed dependent and provided results \citep[based on][Chapter 7]{kobayashi2011probability} that allow us to derive a discrete-time correlated random walk that preserves this conditional dependence between the (state-dependent) steps and turns:
 \begin{equation}
 \label{eq:ricesteps}
-  l_t \mid \boldsymbol{\beta}, \boldsymbol{\sigma}, l_{t-1}, S_t = s \sim \text{Rice}\left(l_{t-1}\left(1-e^{-\beta_s}\right) / \beta_s, \eta_s \right)
+  [l_t \mid \boldsymbol{\beta}, \boldsymbol{\sigma}, l_{t-1}, S_t = s] = \text{Rice}\left(l_{t-1}\left(1-e^{-\beta_s}\right) / \beta_s, \eta_s \right)
 \end{equation}
 and
 \begin{equation}
 \label{eq:vmangles}
-  a_t \mid \boldsymbol{\beta}, \boldsymbol{\sigma}, l_t, l_{t-1}, S_t = s \sim \text{von Mises}\left(0, l_t l_{t-1} e^{-\beta_s} / \eta_s \right),
+  [a_t \mid \boldsymbol{\beta}, \boldsymbol{\sigma}, l_t, l_{t-1}, S_t = s] = \text{von Mises}\left(0, l_t l_{t-1} e^{-\beta_s} / \eta_s \right),
 \end{equation}
-where $\eta_s = \frac{\sigma_s^2}{\beta_s^2} \left[1-\frac{2 \left(1-e^{-\beta_s}\right)}{\beta_s}+\frac{1-e^{-2\beta_s}}{2 \beta_s} \right]$, $\beta_s>0$ is an autocorrelation parameter, $\sigma_s>0$ is a parameter controlling the overall variability in velocity, and $\text{Rice}\left(\nu, \rho \right)$ is the Rice distribution with distance parameter $\nu$ and scale parameter $\rho$. Note that this formulation not only induces dependence between the steps and turns, but also between successive steps (Eq.\ \ref{eq:ricesteps}). Although arguably less flexible than the circular-linear copulae approach proposed by \citet{hodel2022circular}, this correlated step and turn model is essentially ``plug and play'' within the HMM model-fitting framework, can be directly compared with conventional (uncorrelated) step and turn models using standard HMM diagnostics (e.g., pseudo-residuals) and information-theoretic model selection criteria (e.g., AIC, BIC), and retains the intuitive interpretation afforded by discrete-time step and turn models. %For example, the state-dependent distributions can be visualized and compared by marginalizing over previous step lengths:
+where $\eta_s = \frac{\sigma_s^2}{\beta_s^2} \left[1-\frac{2 \left(1-e^{-\beta_s}\right)}{\beta_s}+\frac{1-e^{-2\beta_s}}{2 \beta_s} \right]$, $\beta_s>0$ is the velocity autocorrelation parameter of the CTCRW, $\sigma_s>0$ is a parameter controlling the overall variability in velocity, and $\text{Rice}\left(\nu, \rho \right)$ is the Rice density function with distance parameter $\nu$ and scale parameter $\rho$. Note that this formulation not only induces dependence between the steps and turns, but also between successive steps (Eq.\ \ref{eq:ricesteps}). Although arguably less flexible than the circular-linear copulae approach proposed by \citet{hodel2022circular}, this correlated step and turn model can be readily implimented within the HMM model-fitting framework, can be directly compared with conventional (uncorrelated) step and turn models using standard HMM diagnostics (e.g., pseudo-residuals) and information-theoretic model selection criteria (e.g., AIC, BIC), and retains the intuitive interpretation afforded by discrete-time step and turn models. A state-dependent random walk results as the limit of this model. As $\beta_s \to \infty$ and  $\sigma_s/\beta_s \to \tilde{\sigma}_s$, this model transitions to the HMM random walk model,
+\begin{equation}
+%\label{eq:ricesteps}
+  [l_t \mid \tilde{\sigma}_s, S_t = s] = \text{Weibull}\left(\sqrt{2}\tilde{\sigma}_s, 2 \right) \text{ and } [a_t] = \frac{1}{2\pi},\ a_t \in [-\pi, \pi),
+\end{equation}
+where $l_t$ and $a_t$ are independent. 
+%For example, the state-dependent distributions can be visualized and compared by marginalizing over previous step lengths:
 %\begin{equation}
 %  \left[l_t \mid \boldsymbol{\beta}, \boldsymbol{\sigma}, S_t = s\right] = \int \left[l_t \mid \boldsymbol{\beta}, \boldsymbol{\sigma}, l_{t-1}, S_t = s\right] \left[l_{t-1}\right] dl_{t-1}
 %\end{equation}
@@ -245,7 +212,7 @@ where $\eta_s = \frac{\sigma_s^2}{\beta_s^2} \left[1-\frac{2 \left(1-e^{-\beta_s
 %  \left[a_t \mid \boldsymbol{\beta}, \boldsymbol{\sigma}, S_t = s\right] = \int \int \left[a_t \mid \boldsymbol{\beta}, \boldsymbol{\sigma}, l_t, l_{t-1}, S_t = s\right] \left[l_t\right] \left[l_{t-1}\right] dl_t dl_{t-1},
 %\end{equation}
 %where $\left[l_t\right]$ is unknown but can be approximated based on the observed step length distribution using a kernel density estimator.
-This observation model also only requires two parameters per state ($\beta_s$ and $\sigma_s$) as compared with up to four parameters per state in Eqs.\ \ref{eq:steps}--\ref{eq:turns}. However, as with commonly used step length distributions in standard animal movement HMMs, the Rice distribution requires $l_t>0$ and therefore also necessitates a zero-inflated mixture distribution to accommodate $l_t=0$:
+The correlated step and turn model also only requires two parameters per state ($\beta_s$ and $\sigma_s$) as compared with up to four parameters per state in Eqs.\ \ref{eq:steps}--\ref{eq:turns}. However, as with commonly used step length distributions in standard animal movement HMMs, the Rice distribution requires $l_t>0$ and therefore also necessitates a zero-inflated mixture distribution to accommodate $l_t=0$:
 \begin{equation}
   \label{eq:zi}
   \left[l_t \mid \boldsymbol{\beta}, \boldsymbol{\sigma}, \boldsymbol{\omega}, l_{t-1}, S_t = s\right] =
@@ -255,25 +222,25 @@ This observation model also only requires two parameters per state ($\beta_s$ an
   0 & \text{otherwise}
   \end{cases},
 \end{equation}
-where $\omega_s$ is an additional (state-dependent) zero-mass parameter. Moreover, this correlated step and turn model is not particularly amenable to a continuous-time formulation.
+where $0<\omega_s<1$ is an additional (state-dependent) zero-mass parameter. Moreover, this correlated step and turn model is not particularly amenable to a continuous-time formulation.
 
 \subsection{Cartesian model}
-As an alternative to metrics based on polar coordinates, multistate movement models can be flexibly formulated on the Cartesian plane by modeling position (or velocity) directly \citep[e.g.][]{blackwell1997random,JonsenEtAl2005,WhoriskeyEtAl2017,HootenEtAl2019,MichelotBlackwell2018}. Let's begin with a discrete-time simple random walk, 
+As an alternative to metrics based on polar coordinates, multistate movement models can be flexibly formulated on the Cartesian plane by modeling position (or velocity) directly \citep[e.g.][]{blackwell1997random,JonsenEtAl2005,WhoriskeyEtAl2017,HootenEtAl2019,MichelotBlackwell2018}. We begin with a discrete-time simple random walk, 
 \begin{equation}
 \label{eq:srw}
-  {\bf x}_t \mid {\boldsymbol \sigma}, {\boldsymbol \rho}, S_t=s \sim N\left({\bf x}_{t-1},{\boldsymbol \Sigma}_s\right),
+  [{\bf x}_t \mid {\boldsymbol \sigma}, {\boldsymbol \rho}, S_t=s] = N\left({\bf x}_{t-1},{\boldsymbol \Sigma}_s\right),
 \end{equation}
 where ${\bf x}_t=\left(x_t,y_t\right)$, $
 {\boldsymbol \Sigma}_s = \begin{bmatrix}
   \sigma^2_{x,s} & \rho_s \sigma_{x,s} \sigma_{y,s} \\
   \rho_s \sigma_{x,s} \sigma_{y,s} &  \sigma^2_{y,s} 
-\end{bmatrix}$, $\sigma_{x,s}$ (or $\sigma_{y,s}$) is the standard deviation (or ``speed'') parameter in the easting (or northing) direction for state $s$, $\rho_s \in (-1,1)$ is the degree of correlation in the easting and northing directions for state $s$, and $N()$ is the (bivariate) normal distribution. It is common to assume the errors are independent and symmetric, that is, ${\boldsymbol \Sigma}_s=\mathbf{I}\sigma^2_s$, where $\mathbf{I}$ is the identity matrix. This simple random walk is akin to setting $\kappa_s=0$ in Eq.\ \ref{eq:turns} in that the derived steps and turns are conditionally independent (even when $\rho_s \ne 0$). However, this is not the case for correlated or biased random walks in the Cartesian plane (Fig.\ \ref{fig:corrPlot}). Assuming a mean turn angle of zero (as is commonly done in step and turn models), we can express a correlated random walk on position directly as:
+\end{bmatrix}$, $\sigma_{x,s}$ (or $\sigma_{y,s}$) is the standard deviation (or ``speed'') parameter in the easting (or northing) direction for state $s$, $\rho_s \in (-1,1)$ is the degree of correlation in the easting and northing directions for state $s$, and $N(\cdot,\cdot)$ is the (bivariate) normal density function. It is common to assume the errors are independent and symmetric, that is, ${\boldsymbol \Sigma}_s=\mathbf{I}\sigma^2_s$, where $\mathbf{I}$ is the identity matrix. This simple random walk is akin to setting $\kappa_s=0$ in Eq.\ \ref{eq:turns} in that the derived steps and turns are conditionally independent (even when $\rho_s \ne 0$). However, this is not the case for correlated or biased random walks in the Cartesian plane (Fig.\ \ref{fig:corrPlot}). Assuming a mean turn angle of zero (as is commonly done in step and turn models), we can express a correlated random walk on position directly as:
 \begin{equation}
 \label{eq:crw}
-  {\bf x}_t \mid \boldsymbol{\beta}, {\boldsymbol \sigma}, {\boldsymbol \rho}, S_t=s \sim N\left(\boldsymbol{\mu}_{s,t},{\boldsymbol \Sigma}_s\right),
+  [{\bf x}_t \mid {\bf x}_{-t}, \boldsymbol{\beta}, {\boldsymbol \sigma}, {\boldsymbol \rho}, S_t=s] = N\left(\boldsymbol{\mu}_{s,t},{\boldsymbol \Sigma}_s\right),
 \end{equation}
-where $\boldsymbol{\mu}_{s,t}={\bf x}_{t-1}+\left({\bf x}_{t-1}-{\bf x}_{t-2}\right) \beta_s$ and $\beta_s \in {\rm I\!R}
-$ is the (lag 1) autocorrelation parameter (note that higher order autocorrelation could be accommodated with additional terms). As with the standard step and turn model, the Cartesian model can yield turn angles concentrated near zero $\left(\beta_s>0\right)$, turn angles concentrated away from zero $\left(\beta_s <0 \right)$, or a simple random walk $\left(\beta_s=0\right)$. We can therefore more flexibly account for dependence between steps and turns in correlated random walk HMMs by modeling the positions directly and simply replacing $p_s(l_t,a_t)$ in Eq.\ \ref{eq:HMMlike} with $\left[{\bf x}_t \mid \boldsymbol{\beta}, {\boldsymbol \sigma}, {\boldsymbol \rho}, S_t=s\right]$.
+where ${\bf x}_{-t}$ are all locations prior to $t$, $\boldsymbol{\mu}_{s,t}={\bf x}_{t-1}+\left({\bf x}_{t-1}-{\bf x}_{t-2}\right) \beta_s$ and $\beta_s \in {\rm I\!R}
+$ is the (lag 1) autocorrelation parameter (note that higher order autocorrelation could be accommodated with additional terms). As with the standard step and turn model, the Cartesian model can yield turn angles concentrated near zero $\left(\beta_s>0\right)$, turn angles concentrated away from zero $\left(\beta_s <0 \right)$, or a simple random walk $\left(\beta_s=0\right)$. We can therefore more flexibly account for dependence between steps and turns in correlated random walk HMMs by modeling the positions directly and simply replacing $p_s(l_t,a_t)$ in Eq.\ \ref{eq:HMMlike} with $\left[{\bf x}_t \mid {\bf x}_{-t}, \boldsymbol{\beta}, {\boldsymbol \sigma}, {\boldsymbol \rho}, S_t=s\right]$.
 
 \begin{figure}
     \centering
@@ -309,7 +276,7 @@ a model for animal movement in the 3D Cartesian plane by simply extending Eq.\ \
 The fact that the parameters of a discrete-time step and turn HMM are not time-scale invariant can make comparisons across studies difficult because researchers tend to collect data at different time resolutions. However, by modeling the positions directly, the time scale can be easily incorporated and thereby make the parameters invariant. The general form is now:
 \begin{equation}
 \label{eq:disApprox}
-    {\bf x}_t \mid \boldsymbol{\beta}, {\boldsymbol \sigma}, {\boldsymbol \rho}, S_t=s \sim N\left(\boldsymbol{\mu}_{s,t},{\boldsymbol \Sigma}_s \Delta_t \right),
+    [{\bf x}_t \mid {\bf x}_{-t}, \boldsymbol{\beta}, {\boldsymbol \sigma}, {\boldsymbol \rho}, S_t=s] = N\left(\boldsymbol{\mu}_{s,t},{\boldsymbol \Sigma}_s \Delta_t \right),
 \end{equation}
 where $\Delta_t$ is the time step between observations $t$ and $t-1$. For the correlated random walk, we can reparameterize such that we now have $\boldsymbol{\mu}_{s,t}={\bf x}_{t-1}+\Delta_t \gamma_s^{\Delta_{t-1}} \frac{\left({\bf x}_{t-1}-{\bf x}_{t-2}\right)}{\Delta_{t-1}}$ and $\Sigma_s=\frac{\sigma^2_s \left(\gamma_s^{2 \Delta_t}-1\right)}{2 \log \left(\gamma_s\right)} \mathbf{I}$, where $0 < \gamma_s \leq 1$ is the state-specific autocorrelation parameter and $\sigma_s^2$ is the velocity process variance. Within a given state, this model converges to the continuous-time correlated random walk of \cite{JohnsonEtAl2008} as $\Delta_t \to 0$ \citep[e.g.,][]{albertsen2019generalizing}. However, note that this reparameterization does not allow for realized turn angles concentrated away from zero (akin to setting $\theta_s=0$ in the standard step and turn model), so this parameterization is less flexible than Eq.\ \ref{eq:crw}. For the Langevin-based model (Eq.\ \ref{eq:potRSF}), we now have ${\boldsymbol \mu}_{s,t} = {\bf x}_{t-1} + \frac{\sigma_s^2 \Delta_t}{2} \sum_{k=1}^{K_s} \delta_{s,k} \nabla c_k\left({\bf x}_{t-1}\right)$. While $\Delta_1 = \Delta_2 = \cdots = \Delta_T$ in the discrete-time case (and $\Delta_t$ is therefore typically ignored), this paves the way not only for time-invariant parameters but also for discrete-time approximations of continuous-time models, which in practice are what are typically used for simulating and fitting movement models in continuous time \citep[e.g.,][]{HootenEtAl2017,HootenEtAl2019,MichelotEtAl2019}. The only difference is that the observations (and hence $\Delta_t$) no longer need to be regular in time and the state transition probabilities are now modeled as the matrix exponential of the state transition rates $\left(\mathbf{Q}\right)$: 
 \begin{equation}
@@ -329,7 +296,7 @@ where
     \end{blockarray},
 \end{equation}
 \end{linenomath*}
-$q_{i,j} \ge 0$ for $i \ne j$, and $q_{i,i}=\sum_{j \ne i} q_{i,j}$. However, discrete-time approximations of continuous-time HMMs introduce some additional challenges that must be considered. First, the $\Delta_t$ must be reasonably small for the discrete-time approximation to be reliable (i.e., the smaller the $\Delta_t$, the more accurate the approximation). Second, the ``snapshot'' property must be reasonably satisfied, whereby the $\Delta_t$ are small relative to the degree of serial correlation in the state process (note that this also applies to discrete-time HMMs, but this tends to receive less attention in that context). An intuitive rule-of-thumb for the snapshot property to be reasonably satisfied is $\Delta_t \le \frac{1}{\max_i\left(q_{i,i}\right)}$ \citep[][]{glennie2023hidden,McClintockLander2024}. Third, $\mathbf{Q}$ is assumed constant from time $t$ to time $t+1$, which means that any covariates used to model the state transition rates $\left(q_{i,j}\right)$ must also be assumed to be piece-wise constant. For cases where these conditions cannot be reasonably satisfied, there are exact approaches for dealing with large $\Delta_t$ \citep[e.g.,][]{BlackwellEtAl2016}, but these unfortunately remain very computationally intensive and impractical for non-statisticians to implement.
+$q_{i,j} \ge 0$ for $i \ne j$, and $q_{i,i}=\sum_{j \ne i} q_{i,j}$. However, discrete-time approximations of continuous-time HMMs introduce some additional challenges that must be considered. First, the $\Delta_t$ must be reasonably small for the discrete-time approximation to be reliable (i.e., the smaller the $\Delta_t$, the more accurate the approximation). Second, the ``snapshot'' property must be reasonably satisfied, whereby the $\Delta_t$ are small relative to the degree of serial correlation in the state process (note that this also applies to discrete-time HMMs, but this tends to receive less attention in that context). An intuitive rule-of-thumb for the snapshot property to be reasonably satisfied is $\Delta_t \le \frac{1}{\max_i\left(q_{i,i}\right)}$ \citep[][]{glennie2023hidden,McClintockLander2024}. Third, $\mathbf{Q}$ is assumed constant from time $t$ to time $t+1$, which means that any covariates used to model the state transition rates $\left(q_{i,j}\right)$ must also be assumed to be piece-wise constant. For cases where these conditions cannot be reasonably satisfied, there are exact approaches for dealing with large $\Delta_t$ \citep[e.g.,][]{BlackwellEtAl2016}, but these unfortunately remain very computationally intensive and impractical for practitioners to implement at scale.
 
 An additional advantage of modeling position directly is that steps of zero length (i.e., $l_t=0$) pose no additional challenges or computational difficulty. Unlike step and turn models, no zero-inflated mixture distribution (e.g., Eq.\ \ref{eq:zi}) is required and, hence, there is no arbitrary distinction drawn between zero and very small step lengths. 
 
@@ -401,7 +368,7 @@ where $d_{t,k} = \text{atan2} \left(\sin \left(r_{t,k} - b_{t-1}\right),\cos \le
 Data were simulated and models were fitted by maximum likelihood methods using R package \verb|momentuHMM| version 2.0.0 \citep{McClintockMichelot2018}, where the correlated step and turn model can be specified using the ``\verb|crwrice|'' and ``\verb|crwvm|'' data stream distributions, respectively, and all position-based models can be specified using the ``\verb|rw_mvnorm2|'' data stream distribution. Estimator performance was assessed based on the accuracy of the Viterbi algorithm for state assignment \citep[e.g.,][]{ZucchiniEtAl2016} and the relative bias of the state transition parameters. Code for reproducing all simulation experiments can be found in McClintock (2025).
 
 \subsection{Simulation results}
-For the first two sets of simulation experiments, the (Cartesian) correlated random walk (``crwpos'') and the (polar) correlated step and turn (``crwST'') models performed similarly well in terms of both state assignment (Fig.\ \ref{fig:crwViterbiPlots}) and recovery of the state transition probability parameters (e.g., Fig.\ \ref{fig:crwBeta21Plots}; see also Fig.\ \ref{fig:crwBeta12Plots} in Supporting Information). While the standard step and turn HMM (``ST'') performed reasonably well in the ``low'' scenarios, its performance deteriorated as the degree of overlap in the state-specific observation distributions increased. This is a direct result of the conditional independence assumption of the standard step and turn HMM, as it is no longer able to reliably distinguish the states when the realized state-specific step length and turn angle distributions overlap (as in Fig.\ \ref{fig:crwDensPlots} and Fig.\ \ref{fig:crwSTDensPlots} in Supporting Information). Pseudo-residual QQ and ACF plots (Figs \ref{fig:prcrw_step_qq}--\ref{fig:prcrwST_angle_acf} in Supporting Information) indicated larger deviations from normality and strong positive autocorrelations in the step length pseudo-residuals for the ``ST'' model that became more pronounced as the degree of overlap in the state-dependent observation distributions increased. When comparing the ``crwST'' and ``ST'' models, the estimated likelihood was always much higher for the ``crwST'' model, with AIC overwhelmingly favoring the ``crwST'' model in 100\% of the simulations across all scenarios for both sets of experiments.
+For the first two sets of simulation experiments, the (Cartesian) correlated random walk (``crwpos'') and the (polar) correlated step and turn (``crwST'') models performed similarly well in terms of both state assignment (Fig.\ \ref{fig:crwViterbiPlots}) and recovery of the state transition probability parameters (e.g., Fig.\ \ref{fig:crwBeta21Plots}; see also Fig.\ \ref{fig:crwBeta12Plots} in Supporting Information). While the standard step and turn HMM (``ST'') performed reasonably well in the ``low'' scenarios, its performance deteriorated as the degree of overlap in the state-specific observation distributions increased. This is a direct result of the conditional independence assumption of the standard step and turn HMM, as it is no longer able to reliably distinguish the states when the realized state-specific step length and turn angle distributions overlap (as in Fig.\ \ref{fig:crwDensPlots} and Fig.\ \ref{fig:crwSTDensPlots} in Supporting Information). Pseudo-residual QQ and ACF plots (Figs \ref{fig:prcrw_step_qq}--\ref{fig:prcrwST_angle_acf} in Supporting Information) indicated larger deviations from normality and strong positive autocorrelation in the step length pseudo-residuals for the ``ST'' model that became more pronounced as the degree of overlap in the state-dependent observation distributions increased. When comparing the ``crwST'' and ``ST'' models, the estimated likelihood was always much higher for the ``crwST'' model, with AIC overwhelmingly favoring the ``crwST'' model in 100\% of the simulations across all scenarios for both sets of experiments.
 
 \begin{figure}
     \centering
@@ -527,15 +494,14 @@ Perhaps the most notable difference is that state 3 in the position-based model 
 \end{figure}
 
 \section{Discussion}
-Using simulation and a case study, we have demonstrated how polar-based ``step and turn'' movement HMMs that ignore correlation between step lengths and turn angles can yield inferences that significantly differ from those of position-based (Cartesian) movement HMMs. Ignoring this correlation is of little consequence when the state-dependent observation distributions share little to no support, but one of the most appealing features of a (properly specified) HMM is its ability to distinguish states when the underlying distributions are less obvious. Although standard ``step and turn'' HMMs are currently much more widely used, our results suggest practitioners should consider alternatives and not simply default to this approach. This becomes even more important as these models are increasingly being used to inform conservation and management decisions.
+Using simulation and a case study, we have demonstrated how polar-based ``step and turn'' movement HMMs that ignore correlation between step lengths and turn angles can yield inferences that significantly differ from those of position-based (Cartesian) movement HMMs. Ignoring this correlation is of little consequence when the state-dependent observation distributions share little to no support, but one of the most appealing features of a (properly specified) HMM is its ability to distinguish states when the underlying distributions are less obvious. Although standard ``step and turn'' HMMs are currently much more widely used, our results suggest practitioners should consider alternatives and not simply default to this approach. This becomes even more important as these models are increasingly being used to inform conservation and management decisions in relation to habitat or space use.
 
-Despite standard step and turn models becoming commonplace over the past two decades, this issue has received remarkably little attention in the literature \citep[but see][]{hodel2022circular}. We hope our work will help bring this issue further to the forefront and provide a potential workflow to help identify which HMM formulation might be more appropriate for particular systems and behaviors of interest. We recommend that practitioners first examine their data for any correlation between step lengths and turn angles during exploratory data analysis. This can be as simple as calculating Pearson's correlation coefficient, $\corr \left(l,\left|a \right| \right)$, or visual examination of circular box plots (e.g., Fig.\ \ref{fig:sesStepTurnCor}). Correlation between step lengths and turn angles is not necessarily problematic as this can simply be induced by different movement behaviors (e.g. ``encamped'' versus ``exploratory'' movements). However, state-dependent correlation can be problematic and difficult to diagnose because the underlying states are unknown. To help identify if there may be correlation between steps and turns within a given state, one can compare the standard step and turn HMM to the correlated step and turn HMM using information criteria (e.g. AIC, BIC), pseudo-residual plots, and/or state-dependent circular box plots (as demonstrated in the southern elephant seal example). If the steps and turns are conditionally independent within each state, then the correlated step and turn HMM should not be supported by these diagnostics, thereby indicating the standard step and turn HMM sufficiently explains any correlation by simply conditioning on the latent states. The standard step and turn HMM could also be compared with the (more flexible) circular-linear copula approach of \citet{hodel2022circular}, but metrics other than information criteria and pseudo-residuals would need to be used. If evidence is found for correlation between steps and turns within a given state, our results suggest that the correlated step and turn HMM or a position-based HMM should be considered for inference. We again note that all of these steps can be performed with existing software \citep[e.g.][]{McClintockMichelot2018,hodel2022circular}.
+Despite standard step and turn models becoming commonplace over the past two decades, this issue has received remarkably little attention in the literature \citep[but see][]{hodel2022circular}. We hope our work will help bring this issue further to the forefront and provide a potential workflow to help identify which HMM formulation might be more appropriate for particular systems and behaviors of interest. If practitioners want to use step and turn models, we recommend that practitioners first examine their data for any correlation between step lengths and turn angles during exploratory data analysis. This can be as simple as calculating Pearson's correlation coefficient, $\corr \left(l,\left|a \right| \right)$, or visual examination of circular box plots (e.g., Fig.\ \ref{fig:sesStepTurnCor}). Correlation between step lengths and turn angles is not necessarily problematic as this can simply be induced by different movement behaviors (e.g. ``encamped'' versus ``exploratory'' movements). However, state-dependent correlation can be problematic and difficult to diagnose because the underlying states are unknown. To help identify if there may be correlation between steps and turns within a given state, one can compare the standard step and turn HMM to the correlated step and turn HMM using information criteria (e.g. AIC, BIC), pseudo-residual plots, and/or state-dependent circular box plots (as demonstrated in the southern elephant seal example). If the steps and turns are conditionally independent within each state, then the correlated step and turn HMM should not be supported by these diagnostics, thereby indicating the standard step and turn HMM sufficiently explains any correlation by simply conditioning on the latent states. The standard step and turn HMM could also be compared with the (more flexible) circular-linear copula approach of \citet{hodel2022circular}, but metrics other than information criteria and pseudo-residuals would need to be used. If evidence is found for correlation between steps and turns within a given state, our results suggest that the correlated step and turn HMM or a position-based HMM should be considered for inference. We again note that all of these steps can be performed with existing software \citep[e.g.][]{McClintockMichelot2018,hodel2022circular}.
 
 %Beyond accounting for correlation between steps and turns, 
-Beyond capitalizing on the correlations between steps and turns to help identify latent behavioral states, 
-position- or velocity-based formulations pose other advantages. As demonstrated in our simulations and case study, potential functions are a much more straightforward approach to modeling more realistic movements driven by environmental gradients. It is also much easier to formulate them using time-scale invariant parameterizations or in continuous time. The primary disadvantage of modeling animal movement as a multistate bivariate (or trivariate) normal random walk is that the interpretation of the model parameters is perhaps somewhat less intuitive than in standard step and turn HMMs. However, histograms and densities of the realized state-dependent step lengths and turn angles can still be visualized (e.g., Fig.\ \ref{fig:bcrwdens}), which we find can be helpful when interpreting the output from a position-based HMM.
+Beyond capitalizing on the correlations between steps and turns to help identify latent behavioral states, position- or velocity-based formulations provide other advantages and we suggest they should be the ``default'' HMM formulation for movement modeling. As demonstrated in our simulations and case study, potential functions are a much more straightforward approach to modeling more realistic movements driven by environmental gradients. It is also much easier to formulate them using time-scale invariant or continuous-time parameterizations. The primary disadvantage of modeling animal movement as a multistate bivariate (or trivariate) normal random walk is that the interpretation of the model parameters is perhaps somewhat less intuitive than in standard step and turn HMMs. These parameters have their inspiration in continuous-time stochastic differential equations, which are not as easy to gain a deep understanding in practice as opposed a step and turn which can be easily visualized. But, it simply requires practitioners to consider the unit of movement to be a single 2d location ``displacement'' rather than two separate 1d steps and turns. As these models become more prominent, we believe intuition about these models will become as common as step and turn models. However, histograms and densities of the realized state-dependent step lengths and turn angles can still be visualized (e.g., Fig.\ \ref{fig:bcrwdens}) for position-based models. We find this can be helpful when interpreting the output from a position-based HMM. 
 
-Perhaps most importantly, do we as movement ecologists believe steps and turns are ever actually independent? Are animals really separately choosing the speed and the direction of movement in the independent polar plane as they respond to their internal and external environment? Even within a particular movement behavior state this seems unlikely. Given the dangers associated with ignoring this correlation, we hope our work will ultimately lead to broader adoption of position-based animal movement HMMs. Our work also has implications for other analysis methods that typically assume independence between step lengths and turn angles, such as step selection functions for inferring habitat selection \citep[e.g.][]{thurfjell2014applications}. This remains a promising avenue for future research.
+Perhaps most importantly, do we as movement ecologists believe steps and turns are ever actually independent? Are animals really separately choosing the speed and the direction of movement in the independent polar plane as they respond to their internal and external environment? Even within a particular movement behavior state this seems unlikely. Given the dangers associated with ignoring this correlation, we hope our work will ultimately lead to broader adoption of position-based animal movement HMMs. Our work also has implications for other analysis methods that typically assume independence between step lengths and turn angles, such as step selection functions for inferring habitat selection \citep[e.g.][]{thurfjell2014applications}. \citet{Johnson:2008kx} and \citet{Christ:2008fk} provide position-based alternatives to step-selection functions for single-state cases and extending these models is a promising avenue for future research.
 
 \section*{Acknowledgments}
 The findings and conclusions in the manuscript are those of the author(s) and do not necessarily represent the views of the National Marine Fisheries Service, NOAA. Any use of trade, product, or firm names does not imply an endorsement by the US Government.
