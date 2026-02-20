@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.6.20)  20 FEB 2026 11:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.6.20)  20 FEB 2026 14:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -767,7 +767,7 @@ Here is how much of TeX's memory you used:
  34753 multiletter control sequences out of 15000+600000
  541661 words of font info for 109 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,13n,77p,2369b,660s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,13n,77p,2369b,658s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 pdfTeX warning (dest): name{figure.caption.34} has been referenced but does not
  exist, replaced by a fixed one
@@ -883,7 +883,7 @@ pe1/public/cm-super/sfst1200.pfb></usr/local/texlive/2023/texmf-dist/fonts/type
 1/public/cm-super/sfti1200.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/
 public/cm-super/sfti1440.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/pu
 blic/cm-super/sftt1200.pfb>
-Output written on onStepsAndTurns.pdf (37 pages, 33353092 bytes).
+Output written on onStepsAndTurns.pdf (37 pages, 33353458 bytes).
 PDF statistics:
  878 PDF objects out of 1000 (max. 8388607)
  743 compressed objects within 8 object streams
