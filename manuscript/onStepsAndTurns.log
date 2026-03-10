@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.1.8)  9 MAR 2026 14:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.1.8)  9 MAR 2026 18:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -524,7 +524,7 @@ Non-PDF special ignored!
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 173--182
+Underfull \hbox (badness 10000) in paragraph at lines 173--178
 
  []
 
@@ -532,118 +532,118 @@ Underfull \hbox (badness 10000) in paragraph at lines 173--182
 
 
 ] [3]
-Overfull \hbox (74.74455pt too wide) in paragraph at lines 234--236
+Overfull \hbox (74.74455pt too wide) in paragraph at lines 231--233
 \OT1/cmr/m/n/12 where $\OT1/cmr/bx/n/12 ^^@[] \OT1/cmr/m/n/12 = []$ is the $\OML/cmm/m/it/12 N \OMS/cmsy/m/n/12 ^^B \OML/cmm/m/it/12 N$ \OT1/cmr/m/n/12 tran-si-tion prob-a-bil-ity ma-trix, $\OT1/cmr/bx/n/12 P\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 l[]; a[]\OT1/cmr/m/n/12 ) = [](\OML/cmm/m/it/12 p[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 l[]; a[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; [] ; p[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 l[]; a[]\OT1/cmr/m/n/12 ))$,
  []
 
-[4] [5]
-Overfull \hbox (0.80719pt too wide) in paragraph at lines 243--243
+[4]
+Overfull \hbox (0.80719pt too wide) in paragraph at lines 240--240
 []\OT1/cmr/bx/n/17.28 Alternative an-i-mal move-ment HMM for-mu-la-tions 
  []
 
-[6] [7]
-<corrPlot.pdf, id=225, 578.16pt x 578.16pt>
+[5] [6] [7]
+<corrPlot.pdf, id=222, 578.16pt x 578.16pt>
 File: corrPlot.pdf Graphic file (type pdf)
 <use corrPlot.pdf>
-Package pdftex.def Info: corrPlot.pdf  used on input line 308.
+Package pdftex.def Info: corrPlot.pdf  used on input line 305.
 (pdftex.def)             Requested size: 443.57848pt x 443.57896pt.
 [8] [9 <./corrPlot.pdf>] [10] [11] [12]
-<../simulations/crwDensPlots.pdf, id=354, 578.16pt x 794.97pt>
+<../simulations/crwDensPlots.pdf, id=350, 578.16pt x 794.97pt>
 File: ../simulations/crwDensPlots.pdf Graphic file (type pdf)
 <use ../simulations/crwDensPlots.pdf>
-Package pdftex.def Info: ../simulations/crwDensPlots.pdf  used on input line 375.
+Package pdftex.def Info: ../simulations/crwDensPlots.pdf  used on input line 373.
 (pdftex.def)             Requested size: 443.57848pt x 609.9211pt.
 
-LaTeX Warning: Float too large for page by 50.06764pt on input line 378.
+LaTeX Warning: Float too large for page by 50.06764pt on input line 376.
 
 [13] [14 <../simulations/crwDensPlots.pdf>] [15] [16]
-<../simulations/crwViterbiPlots.pdf, id=428, 578.16pt x 794.97pt>
+<../simulations/crwViterbiPlots.pdf, id=423, 578.16pt x 794.97pt>
 File: ../simulations/crwViterbiPlots.pdf Graphic file (type pdf)
 <use ../simulations/crwViterbiPlots.pdf>
-Package pdftex.def Info: ../simulations/crwViterbiPlots.pdf  used on input line 436.
+Package pdftex.def Info: ../simulations/crwViterbiPlots.pdf  used on input line 434.
 (pdftex.def)             Requested size: 399.21791pt x 548.91806pt.
 
-LaTeX Warning: Float too large for page by 43.46463pt on input line 439.
+LaTeX Warning: Float too large for page by 43.46463pt on input line 437.
 
-<../simulations/crwBeta21Plots.pdf, id=429, 578.16pt x 794.97pt>
+<../simulations/crwBeta21Plots.pdf, id=424, 578.16pt x 794.97pt>
 File: ../simulations/crwBeta21Plots.pdf Graphic file (type pdf)
 <use ../simulations/crwBeta21Plots.pdf>
-Package pdftex.def Info: ../simulations/crwBeta21Plots.pdf  used on input line 443.
+Package pdftex.def Info: ../simulations/crwBeta21Plots.pdf  used on input line 441.
 (pdftex.def)             Requested size: 399.21791pt x 548.91806pt.
 
-LaTeX Warning: Float too large for page by 43.46463pt on input line 446.
+LaTeX Warning: Float too large for page by 43.46463pt on input line 444.
 
 [17] [18 <../simulations/crwViterbiPlots.pdf>] [19 <../simulations/crwBeta21Plots.pdf>]
-<../simulations/spatViterbiPlots.pdf, id=469, 578.16pt x 794.97pt>
+<../simulations/spatViterbiPlots.pdf, id=464, 578.16pt x 794.97pt>
 File: ../simulations/spatViterbiPlots.pdf Graphic file (type pdf)
 <use ../simulations/spatViterbiPlots.pdf>
-Package pdftex.def Info: ../simulations/spatViterbiPlots.pdf  used on input line 456.
+Package pdftex.def Info: ../simulations/spatViterbiPlots.pdf  used on input line 454.
 (pdftex.def)             Requested size: 399.21791pt x 548.91806pt.
 
-LaTeX Warning: Float too large for page by 57.06464pt on input line 459.
+LaTeX Warning: Float too large for page by 57.06464pt on input line 457.
 
-<../simulations/spatBeta21Plots.pdf, id=470, 578.16pt x 794.97pt>
+<../simulations/spatBeta21Plots.pdf, id=465, 578.16pt x 794.97pt>
 File: ../simulations/spatBeta21Plots.pdf Graphic file (type pdf)
 <use ../simulations/spatBeta21Plots.pdf>
-Package pdftex.def Info: ../simulations/spatBeta21Plots.pdf  used on input line 463.
+Package pdftex.def Info: ../simulations/spatBeta21Plots.pdf  used on input line 461.
 (pdftex.def)             Requested size: 399.21791pt x 548.91806pt.
 
-LaTeX Warning: Float too large for page by 70.66464pt on input line 466.
+LaTeX Warning: Float too large for page by 70.66464pt on input line 464.
 
-<../examples/ses/sesStepTurnCor.pdf, id=478, 578.16pt x 794.97pt>
+<../examples/ses/sesStepTurnCor.pdf, id=473, 578.16pt x 794.97pt>
 File: ../examples/ses/sesStepTurnCor.pdf Graphic file (type pdf)
 <use ../examples/ses/sesStepTurnCor.pdf>
-Package pdftex.def Info: ../examples/ses/sesStepTurnCor.pdf  used on input line 475.
+Package pdftex.def Info: ../examples/ses/sesStepTurnCor.pdf  used on input line 472.
 (pdftex.def)             Requested size: 399.21791pt x 548.91806pt.
 
-LaTeX Warning: Float too large for page by 2.66461pt on input line 478.
+LaTeX Warning: Float too large for page by 2.66461pt on input line 475.
 
 [20] [21 <../simulations/spatViterbiPlots.pdf>] [22 <../simulations/spatBeta21Plots.pdf>] [23 <../examples/ses/sesStepTurnCor.pdf>] [24] [25]
-<../examples/ses/bcrwdens.pdf, id=569, 794.97pt x 794.97pt>
+<../examples/ses/bcrwdens.pdf, id=566, 794.97pt x 794.97pt>
 File: ../examples/ses/bcrwdens.pdf Graphic file (type pdf)
 <use ../examples/ses/bcrwdens.pdf>
-Package pdftex.def Info: ../examples/ses/bcrwdens.pdf  used on input line 537.
+Package pdftex.def Info: ../examples/ses/bcrwdens.pdf  used on input line 534.
 (pdftex.def)             Requested size: 399.21791pt x 399.23077pt.
-<../examples/ses/mpos.pdf, id=570, 867.24pt x 433.62pt>
+<../examples/ses/mpos.pdf, id=567, 867.24pt x 433.62pt>
 File: ../examples/ses/mpos.pdf Graphic file (type pdf)
 <use ../examples/ses/mpos.pdf>
-Package pdftex.def Info: ../examples/ses/mpos.pdf  used on input line 544.
+Package pdftex.def Info: ../examples/ses/mpos.pdf  used on input line 541.
 (pdftex.def)             Requested size: 399.21791pt x 199.61317pt.
-<../examples/ses/simmpos.pdf, id=571, 867.24pt x 433.62pt>
+<../examples/ses/simmpos.pdf, id=568, 867.24pt x 433.62pt>
 File: ../examples/ses/simmpos.pdf Graphic file (type pdf)
 <use ../examples/ses/simmpos.pdf>
-Package pdftex.def Info: ../examples/ses/simmpos.pdf  used on input line 545.
+Package pdftex.def Info: ../examples/ses/simmpos.pdf  used on input line 542.
 (pdftex.def)             Requested size: 399.21791pt x 199.61317pt.
-<../examples/ses/bathComp.pdf, id=572, 794.97pt x 794.97pt>
+<../examples/ses/bathComp.pdf, id=569, 794.97pt x 794.97pt>
 File: ../examples/ses/bathComp.pdf Graphic file (type pdf)
 <use ../examples/ses/bathComp.pdf>
-Package pdftex.def Info: ../examples/ses/bathComp.pdf  used on input line 552.
+Package pdftex.def Info: ../examples/ses/bathComp.pdf  used on input line 549.
 (pdftex.def)             Requested size: 399.21791pt x 399.23077pt.
-[26] [27 <../examples/ses/bcrwdens.pdf>] [28 <../examples/ses/mpos.pdf> <../examples/ses/simmpos.pdf>] [29 <../examples/ses/bathComp.pdf>] [30] [31] (./onStepsAndTurns.bbl [32] [33] [34] [35] [36])
+[26] [27 <../examples/ses/bcrwdens.pdf>] [28 <../examples/ses/mpos.pdf> <../examples/ses/simmpos.pdf>] [29 <../examples/ses/bathComp.pdf>] [30] (./onStepsAndTurns.bbl [31] [32] [33] [34] [35])
 
 Package natbib Warning: There were multiply defined citations.
 
-[37] (./onStepsAndTurns.aux)
+[36] (./onStepsAndTurns.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-29>
  ***********
 Package rerunfilecheck Info: File `onStepsAndTurns.out' has not changed.
-(rerunfilecheck)             Checksum: 80453BA7F859CCFCED13E6CDC68F170C;1668.
+(rerunfilecheck)             Checksum: 06CF15CDEF7DCCE3EB3DB6CB12CBF24B;1684.
  ) 
 Here is how much of TeX's memory you used:
- 14133 strings out of 469519
- 225793 string characters out of 5468160
- 677813 words of memory out of 5000000
- 42426 multiletter control sequences out of 15000+600000
+ 14126 strings out of 469519
+ 225647 string characters out of 5468160
+ 675681 words of memory out of 5000000
+ 42422 multiletter control sequences out of 15000+600000
  646024 words of font info for 108 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 73i,13n,79p,2360b,673s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 73i,13n,79p,2360b,655s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </Users/brett.mcclintock/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></Users/brett.mcclintock/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></Users/brett.mcclintock/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxsl10.pfb></Users/brett.mcclintock/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></Users/brett.mcclintock/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></Users/brett.mcclintock/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></Users/brett.mcclintock/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></Users/brett.mcclintock/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></Users/brett.mcclintock/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></Users/brett.mcclintock/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></Users/brett.mcclintock/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></Users/brett.mcclintock/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></Users/brett.mcclintock/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></Users/brett.mcclintock/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></Users/brett.mcclintock/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></Users/brett.mcclintock/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></Users/brett.mcclintock/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></Users/brett.mcclintock/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></Users/brett.mcclintock/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></Users/brett.mcclintock/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></Users/brett.mcclintock/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></Users/brett.mcclintock/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></Users/brett.mcclintock/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on onStepsAndTurns.pdf (37 pages, 33178242 bytes).
+Output written on onStepsAndTurns.pdf (36 pages, 33176323 bytes).
 PDF statistics:
- 808 PDF objects out of 1000 (max. 8388607)
- 691 compressed objects within 7 object streams
- 138 named destinations out of 1000 (max. 500000)
- 152 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 796 PDF objects out of 1000 (max. 8388607)
+ 680 compressed objects within 7 object streams
+ 135 named destinations out of 1000 (max. 500000)
+ 144 words of extra memory for PDF output out of 10000 (max. 10000000)
 

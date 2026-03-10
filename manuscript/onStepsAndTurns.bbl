@@ -1,4 +1,4 @@
-\begin{thebibliography}{51}
+\begin{thebibliography}{50}
 \providecommand{\natexlab}[1]{#1}
 
 \bibitem[{Ahmed \emph{et~al.}(2021)Ahmed, Benhamou, Bonsall \& Petrovskii}]{AHMED2021110728}
@@ -176,10 +176,6 @@ Pirotta, E., Edwards, E.W.J., New, L. \& Thompson, P.M. (2018) Central place for
 \bibitem[{{R Core Team}(2024)}]{RCoreTeam2024}
 {R Core Team} (2024) \emph{R: A Language and Environment for Statistical Computing}.
 \newblock R Foundation for Statistical Computing, Vienna, Austria.
-
-\bibitem[{{Ribeiro Jr} \emph{et~al.}(2024){Ribeiro Jr}, Diggle, Christensen, Schlather, Bivand \& Ripley}]{RibeiroEtAl2024}
-{Ribeiro Jr}, P.J., Diggle, P., Christensen, O., Schlather, M., Bivand, R. \& Ripley, B. (2024) \emph{geoR: Analysis of Geostatistical Data}.
-\newblock R package version 1.9-4.
 
 \bibitem[{Rivest \emph{et~al.}(2016)Rivest, Duchesne, Nicosia \& Fortin}]{rivest2016general}
 Rivest, L.P., Duchesne, T., Nicosia, A. \& Fortin, D. (2016) A general angular regression model for the analysis of data on animal movement in ecology.

@@ -7,15 +7,15 @@
 \citation{McClintockEtAl2014b}
 \citation{MoralesEtAl2004,LangrockEtAl2012,McClintockEtAl2012}
 \@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{3}{section.1}\protected@file@percent }
+\newlabel{eq:steps}{{1}{3}{Introduction}{equation.1}{}}
 \citation{MichelotEtAl2016,McClintockMichelot2018}
 \citation{McClintockEtAl2012,rivest2016general}
 \citation{hodel2022circular}
-\newlabel{eq:steps}{{1}{4}{Introduction}{equation.1}{}}
-\newlabel{eq:turns}{{2}{4}{Introduction}{equation.2}{}}
-\newlabel{eq:HMMlike}{{3}{4}{Introduction}{equation.3}{}}
 \citation{glennie2023hidden}
 \citation{McClintockMichelot2018,PirottaEtAl2018,mul2020killer}
 \citation{parton2017bayesian,eisaguirre2024rayleigh}
+\newlabel{eq:turns}{{2}{4}{Introduction}{equation.2}{}}
+\newlabel{eq:HMMlike}{{3}{4}{Introduction}{equation.3}{}}
 \citation{russell2014marine,CarterEtAl2020,mul2020killer,nickel2021energetics,bassing2024predator}
 \citation{JohnsonEtAl2008,MichelotBlackwell2018}
 \citation{McClintockEtAl2014b}
@@ -53,7 +53,7 @@
 \newlabel{eq:disApprox}{{14}{11}{Cartesian model}{equation.14}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {3}Simulation study}{12}{section.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Simulation methods}{12}{subsection.3.1}\protected@file@percent }
-\citation{RibeiroEtAl2024}
+\citation{SchlatherEtAl2015}
 \citation{SchlatherEtAl2015}
 \citation{RCoreTeam2024}
 \newlabel{eq:simtpm}{{17}{13}{Simulation methods}{equation.17}{}}
@@ -61,10 +61,10 @@
 \newlabel{fig:crwDensPlots}{{2}{14}{Realized step lengths and turn angles for a single dataset generated from a 2-state correlated random walk on the Cartesian plane with ``low'' (top row), ``moderate'' (middle row), and ``high'' (bottom row) levels of overlap in the state-dependent observation distributions. State-dependent curves were computed using a Gaussian kernel density estimator}{figure.caption.5}{}}
 \@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Data-generating parameter values for simulations from a 2-state Langevin-based model with ``low'', ``moderate'', and ``high'' levels of overlap in the state-dependent observation distributions.}}{15}{table.caption.6}\protected@file@percent }
 \newlabel{tab:lang}{{1}{15}{Data-generating parameter values for simulations from a 2-state Langevin-based model with ``low'', ``moderate'', and ``high'' levels of overlap in the state-dependent observation distributions}{table.caption.6}{}}
+\newlabel{eq:STfullstep}{{20}{15}{Simulation methods}{equation.20}{}}
 \citation{rivest2016general,McClintockMichelot2018}
 \citation{McClintockMichelot2018}
 \citation{ZucchiniEtAl2016}
-\newlabel{eq:STfullstep}{{20}{16}{Simulation methods}{equation.20}{}}
 \newlabel{eq:STfullangle}{{21}{16}{Simulation methods}{equation.21}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Simulation results}{16}{subsection.3.2}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Violin plots for the proportion of correct Viterbi-decoded state assignments from 100 simulations with data generated from a 2-state correlated random walk HMM in the Cartesian plane (``crwpos''; left column) and a correlated step and turn HMM in the polar plane (``crwST''; right column), with three degrees of overlap in the state-dependent observation distributions: ``low'' (top row), ``moderate'' (middle row), and ``high'' (bottom row). Three models were fitted to each simulated dataset: 1) ``crwpos''; 2) ``crwST''; and 3) the standard 2-state step and turn HMM (``ST''). Dashed red lines indicate 95\% correct state assignment.}}{18}{figure.caption.7}\protected@file@percent }
@@ -76,9 +76,8 @@
 \citation{hodel2022circular}
 \citation{hodel2022circular}
 \citation{MichelotEtAl2017}
-\@writefile{toc}{\contentsline {section}{\numberline {4}Examples}{20}{section.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Southern elephant seal}{20}{subsection.4.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.1}Methods}{20}{subsubsection.4.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4}Example: southern elephant seal}{20}{section.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Example methods}{20}{subsection.4.1}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Violin plots for the proportion of correct Viterbi-decoded state assignments from simulations with data generated from a 2-state Langevin-based HMM, with three degrees of overlap in the state-dependent observation distributions: ``low'' (top row), ``moderate'' (middle row), and ``high'' (bottom row). Four models were fitted to each simulated dataset: 1) the data-generating model (``lang''); 2) the standard 2-state step and turn HMM (``ST''); 3) a 2-state step and turn HMM including the habitat covariates on the observation distribution parameters (``STcov''); and 4) a 2-state step and turn HMM including transformed gradient-based habitat covariates on the observation distribution parameters. Dashed red lines indicate 95\% correct state assignment.}}{21}{figure.caption.9}\protected@file@percent }
 \newlabel{fig:spatViterbiPlots}{{5}{21}{Violin plots for the proportion of correct Viterbi-decoded state assignments from simulations with data generated from a 2-state Langevin-based HMM, with three degrees of overlap in the state-dependent observation distributions: ``low'' (top row), ``moderate'' (middle row), and ``high'' (bottom row). Four models were fitted to each simulated dataset: 1) the data-generating model (``lang''); 2) the standard 2-state step and turn HMM (``ST''); 3) a 2-state step and turn HMM including the habitat covariates on the observation distribution parameters (``STcov''); and 4) a 2-state step and turn HMM including transformed gradient-based habitat covariates on the observation distribution parameters. Dashed red lines indicate 95\% correct state assignment}{figure.caption.9}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Violin plots for the estimated environmental covariate effects on transitions from state 2 to state 1 $\left (\beta _{2,1,k};k=1,\ldots  ,4\right )$ from 100 simulations with data generated from a 2-state Langevin-based HMM, with three degrees of overlap in the state-dependent observation distributions: ``low'' (left column), ``moderate'' (middle column), and ``high'' (right column). Four models were fitted to each simulated dataset: 1) the data-generating model (``lang''); 2) the standard 2-state step and turn HMM (``ST''); 3) a 2-state step and turn HMM including the habitat covariates on the observation distribution parameters (``STcov''); and 4) a 2-state step and turn HMM including transformed gradient-based habitat covariates on the observation distribution parameters. Dashed red lines indicate true parameter values. For readability, the y-axis has been truncated at $(-1.75,1.75)$.}}{22}{figure.caption.10}\protected@file@percent }
@@ -86,8 +85,11 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Circular box plots of the step lengths (km) and turn angles for the southern elephant seal data. For each of the five step length quantiles, a box plot of the corresponding angles is shown. Outliers (i.e., values outside 1.5 times the inter quartile range) are marked in red. Top plot includes the data for all six individuals, and the bottom six plots correspond to each individual. Plots created using R package cylcop \citep  {hodel2022circular}.}}{23}{figure.caption.11}\protected@file@percent }
 \newlabel{fig:sesStepTurnCor}{{7}{23}{Circular box plots of the step lengths (km) and turn angles for the southern elephant seal data. For each of the five step length quantiles, a box plot of the corresponding angles is shown. Outliers (i.e., values outside 1.5 times the inter quartile range) are marked in red. Top plot includes the data for all six individuals, and the bottom six plots correspond to each individual. Plots created using R package cylcop \citep {hodel2022circular}}{figure.caption.11}{}}
 \citation{MichelotEtAl2017}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.1.2}Results}{24}{subsubsection.4.1.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Example results}{24}{subsection.4.2}\protected@file@percent }
 \citation{mcconnell1992foraging}
+\citation{hodel2022circular}
+\citation{hodel2022circular}
+\citation{McClintockMichelot2018,hodel2022circular}
 \@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Contingency table comparing the Viterbi-decoded state assignments for the 4-state biased random walk step and turn model (``STfull'') and the position-based potential function model (``pot'') in the southern elephant seal example.}}{26}{table.caption.12}\protected@file@percent }
 \newlabel{tab:bcrwstates}{{2}{26}{Contingency table comparing the Viterbi-decoded state assignments for the 4-state biased random walk step and turn model (``STfull'') and the position-based potential function model (``pot'') in the southern elephant seal example}{table.caption.12}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {5}Discussion}{26}{section.5}\protected@file@percent }
@@ -97,9 +99,6 @@
 \newlabel{fig:mpos}{{9}{28}{Six southern elephant seal tracks, colored by the Viterbi-decoded states from the 4-state position-based potential function model (top panel). Bottom panel shows six tracks simulated from the model, with the original data in light gray lines}{figure.caption.14}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Histograms of sea floor depth (km) at southern elephant seal locations assigned to state 2 (left column) and state 3 (right column) by the 4-state biased random walk step and turn model (top row) and the position-based potential function model (bottom row).}}{29}{figure.caption.15}\protected@file@percent }
 \newlabel{fig:bathComp}{{10}{29}{Histograms of sea floor depth (km) at southern elephant seal locations assigned to state 2 (left column) and state 3 (right column) by the 4-state biased random walk step and turn model (top row) and the position-based potential function model (bottom row)}{figure.caption.15}{}}
-\citation{hodel2022circular}
-\citation{hodel2022circular}
-\citation{McClintockMichelot2018,hodel2022circular}
 \citation{thurfjell2014applications}
 \citation{Johnson:2008kx}
 \citation{Christ:2008fk}
@@ -149,11 +148,10 @@
 \bibcite{parton2017bayesian}{{42}{2017}{{Parton \& Blackwell}}{{}}}
 \bibcite{PirottaEtAl2018}{{43}{2018}{{Pirotta \emph  {et~al.}}}{{Pirotta, Edwards, New \& Thompson}}}
 \bibcite{RCoreTeam2024}{{44}{2024}{{R Core Team}}{{}}}
-\bibcite{RibeiroEtAl2024}{{45}{2024}{{{Ribeiro Jr} \emph  {et~al.}}}{{{Ribeiro Jr}, Diggle, Christensen, Schlather, Bivand \& Ripley}}}
-\bibcite{rivest2016general}{{46}{2016}{{Rivest \emph  {et~al.}}}{{Rivest, Duchesne, Nicosia \& Fortin}}}
-\bibcite{russell2014marine}{{47}{2014}{{Russell \emph  {et~al.}}}{{Russell, Brasseur, Thompson, Hastie, Janik, Aarts, McClintock, Matthiopoulos, Moss \& McConnell}}}
-\bibcite{SchlatherEtAl2015}{{48}{2015}{{Schlather \emph  {et~al.}}}{{Schlather, Malinowski, Menck, Oesting \& Strokorb}}}
-\bibcite{thurfjell2014applications}{{49}{2014}{{Thurfjell \emph  {et~al.}}}{{Thurfjell, Ciuti \& Boyce}}}
-\bibcite{WhoriskeyEtAl2017}{{50}{2017}{{Whoriskey \emph  {et~al.}}}{{Whoriskey, Auger-M{\'e}th{\'e}, Albertsen, Whoriskey, Binder, Krueger \& Mills~Flemming}}}
-\bibcite{ZucchiniEtAl2016}{{51}{2016}{{Zucchini \emph  {et~al.}}}{{Zucchini, MacDonald \& Langrock}}}
-\gdef \@abspage@last{37}
+\bibcite{rivest2016general}{{45}{2016}{{Rivest \emph  {et~al.}}}{{Rivest, Duchesne, Nicosia \& Fortin}}}
+\bibcite{russell2014marine}{{46}{2014}{{Russell \emph  {et~al.}}}{{Russell, Brasseur, Thompson, Hastie, Janik, Aarts, McClintock, Matthiopoulos, Moss \& McConnell}}}
+\bibcite{SchlatherEtAl2015}{{47}{2015}{{Schlather \emph  {et~al.}}}{{Schlather, Malinowski, Menck, Oesting \& Strokorb}}}
+\bibcite{thurfjell2014applications}{{48}{2014}{{Thurfjell \emph  {et~al.}}}{{Thurfjell, Ciuti \& Boyce}}}
+\bibcite{WhoriskeyEtAl2017}{{49}{2017}{{Whoriskey \emph  {et~al.}}}{{Whoriskey, Auger-M{\'e}th{\'e}, Albertsen, Whoriskey, Binder, Krueger \& Mills~Flemming}}}
+\bibcite{ZucchiniEtAl2016}{{50}{2016}{{Zucchini \emph  {et~al.}}}{{Zucchini, MacDonald \& Langrock}}}
+\gdef \@abspage@last{36}
