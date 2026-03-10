@@ -6,10 +6,8 @@ library(viridis)
 library(ggplot2)
 library(doFuture)
 library(doRNG)
-#remotes::install_version("RandomFieldsUtils", version= "1.2.5", repos = "http://cran.us.r-project.org") # most recent archived version; required by RandomFields
-#remotes::install_version("RandomFields", version="3.3.14", repos = "http://cran.us.r-project.org") # most recent archived version; required by Rhabit
-#remotes::install_version("geoR", version = "1.8-1", repos = "http://cran.us.r-project.org") # last version before RandomFields was removed from dependencies
-#remotes::install_github("papayoun/Rhabit@31ddf44",dependencies = TRUE) # last commit before RandomFields was removed from dependencies
+library(fields)
+#remotes::install_github("papayoun/Rhabit") 
 library(Rhabit)
 if(!requireNamespace("momentuHMM",quietly=TRUE) || packageVersion("momentuHMM")<"2.0.0"){
   remotes::install_github("bmcclintock/momentuHMM@develop",dependencies = TRUE) # requires momentuHMM version >= 2.0.0
@@ -17,6 +15,7 @@ if(!requireNamespace("momentuHMM",quietly=TRUE) || packageVersion("momentuHMM")<
 library(momentuHMM)
 
 source("simulations/plotDens.R")
+source("simulations/simCov.R")
 
 nsims <- 100
 nbAnimals <- 10
@@ -25,19 +24,20 @@ ncores <- 10
 
 lim <- c(-1, 1, -1, 1)*100
 cropExtent <- extent(lim)
-resol <- 1
+x_seq <- seq(lim[1],lim[2])
+y_seq <- seq(lim[3],lim[4])
 ncov <- 3
 
 scenarios <- c("low","moderate","high")
 
 delta1 <- matrix(c(0, 0,   0,-0.2,
                    3,-2,-2.5,-0.2,
-                   3,-2,-2.5,-0.2)*resol,nrow=length(scenarios),ncol=ncov+1,byrow=TRUE) # state1 resource selection coefficients for the spatial covariates
+                   3,-2,-2.5,-0.2),nrow=length(scenarios),ncol=ncov+1,byrow=TRUE) # state1 resource selection coefficients for the spatial covariates
 beta1 <- c(0,0.15,0.15) # lag 1 autocorrelation for state 1
 sd_1 <- c(sqrt(0.5),sqrt(2.5),sqrt(2.5)) # speed parameter for state 1
 delta2 <- matrix(c(-2,3,2.5,-0.2,
                    -2,3,2.5,-0.2,
-                   0,0,  0,-0.2)*resol,nrow=length(scenarios),ncol=ncov+1,byrow=TRUE) # state2 resource selection coefficients for the spatial covariates
+                   0,0,  0,-0.2),nrow=length(scenarios),ncol=ncov+1,byrow=TRUE) # state2 resource selection coefficients for the spatial covariates
 beta2 <- c(0.15,0.15,0.15) # lag 1 autocorrelation for state 2
 sd_2 <- c(sqrt(5),sqrt(5),sqrt(5)) # speed parameter for state 1
 
@@ -67,13 +67,12 @@ for(sc in 1:length(scenarios)){
     # Generate ncov spatial covariates
     covlist <- list()
     for(i in 1:ncov) {
-      covlist[[i]] <- Rhabit::simSpatialCov(lim = lim, nu = 0.6, rho = 50, sigma2 = 0.1, 
-                                            resol = resol, raster_like = TRUE)
+      covlist[[i]] <- Rhabit::rasterToRhabit(simCov(x_seq,y_seq)$cov)
     }
     
     # Include squared distance to origin as covariate
-    xgrid <- seq(lim[1], lim[2], by=resol)
-    ygrid <- seq(lim[3], lim[4], by=resol)
+    xgrid <- seq(lim[1], lim[2], by=1)
+    ygrid <- seq(lim[3], lim[4], by=1)
     xygrid <- expand.grid(xgrid,ygrid)
     dist2 <- ((xygrid[,1])^2+(xygrid[,2])^2)/100
     covlist[[4]] <- list(x=xgrid, y=ygrid, z=matrix(dist2, length(xgrid), length(ygrid)))
@@ -121,7 +120,7 @@ for(sc in 1:length(scenarios)){
                                    initialPosition=initialPosition,
                                    dist=dist["mu"],
                                    DM=DM2,
-                                   Par=list(mu=c(1,beta1[sc],delta1[sc,],1,beta2[sc],delta2[sc,],1,beta1[sc],delta1[sc,],1,beta2[sc],delta2[sc,],log(sd_1[sc]*resol),log(sd_1[sc]*resol),log(sd_2[sc]*resol)-log(sd_1[sc]*resol),log(sd_1[sc]*resol),log(sd_1[sc]*resol),log(sd_2[sc]*resol)-log(sd_1[sc]*resol),0,0)),
+                                   Par=list(mu=c(1,beta1[sc],delta1[sc,],1,beta2[sc],delta2[sc,],1,beta1[sc],delta1[sc,],1,beta2[sc],delta2[sc,],log(sd_1[sc]),log(sd_1[sc]),log(sd_2[sc])-log(sd_1[sc]),log(sd_1[sc]),log(sd_1[sc]),log(sd_2[sc])-log(sd_1[sc]),0,0)),
                                    beta=beta0,
                                    formula=formula,
                                    formulaDelta=~0+ID,
@@ -136,7 +135,7 @@ for(sc in 1:length(scenarios)){
     
     plotSpatialCov(origData,spatialCov=rhabitToRaster(UD1),states=origData$states)
     
-    Par0 <- list(mu=c(1,beta1[sc],delta1[sc,],1,beta2[sc],delta2[sc,],1,beta1[sc],delta1[sc,],1,beta2[sc],delta2[sc,],log(sd_1[sc]*resol),log(sd_1[sc]*resol),log(sd_2[sc]*resol)-log(sd_1[sc]*resol),log(sd_1[sc]*resol),log(sd_1[sc]*resol),log(sd_2[sc]*resol)-log(sd_1[sc]*resol),0,0))
+    Par0 <- list(mu=c(1,beta1[sc],delta1[sc,],1,beta2[sc],delta2[sc,],1,beta1[sc],delta1[sc,],1,beta2[sc],delta2[sc,],log(sd_1[sc]),log(sd_1[sc]),log(sd_2[sc])-log(sd_1[sc]),log(sd_1[sc]),log(sd_1[sc]),log(sd_2[sc])-log(sd_1[sc]),0,0))
     
     fit <- suppressMessages(fitHMM(origData,nbStates=2,
                                    dist=dist["mu"],

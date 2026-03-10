@@ -1,10 +1,14 @@
+if(!requireNamespace("momentuHMM",quietly=TRUE) || packageVersion("momentuHMM")<"2.0.0"){
+  remotes::install_github("bmcclintock/momentuHMM@develop",dependencies = TRUE) # requires momentuHMM version >= 2.0.0
+}
 library(momentuHMM)
 library(raster)
-#remotes::install_version("RandomFieldsUtils", version= "1.2.5", repos = "http://cran.us.r-project.org") # most recent archived version; required by RandomFields
-#remotes::install_version("RandomFields", version="3.3.14", repos = "http://cran.us.r-project.org") # most recent archived version
-library(RandomFields)
-RFoptions(spConform = FALSE)
+library(fields)
+#remotes::install_github("papayoun/Rhabit") 
+library(Rhabit)
+
 source("simulations/plotDens.R")
+source("simulations/simCov.R")
 
 nSims <- 100
 n <- 1000 # obsPerAnimals
@@ -80,12 +84,7 @@ for(sc in 1:length(scenarios)){
   for(isim in 1:nSims){
     
     # generate spatial covariate
-    spatialCov <- list(cov=raster::raster(RandomFields::RFsimulate(
-      model =  RandomFields::RMmatern(var = 0.1, scale = 50, nu = 0.6), 
-      x = x_seq, 
-      y = y_seq, 
-      grid = TRUE
-    ),xmn=min(x_seq),xmx=max(x_seq),ymn=min(y_seq),ymx=max(y_seq)))
+    spatialCov <- simCov(x_seq,y_seq)
     
     values(spatialCov$cov) <- scale(values(spatialCov$cov))
 

@@ -1,5 +1,7 @@
-#remotes::install_github("bmcclintock/momentuHMM@develop")
-library(momentuHMM) # need momentuHMM >= v2.0.0
+if(!requireNamespace("momentuHMM",quietly=TRUE) || packageVersion("momentuHMM")<"2.0.0"){
+  remotes::install_github("bmcclintock/momentuHMM@develop",dependencies = TRUE) # requires momentuHMM version >= 2.0.0
+}
+library(momentuHMM)
 library(sp)
 library(raster)
 library(cylcop)
