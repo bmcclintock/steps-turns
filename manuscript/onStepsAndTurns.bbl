@@ -1,4 +1,4 @@
-\begin{thebibliography}{50}
+\begin{thebibliography}{53}
 \providecommand{\natexlab}[1]{#1}
 
 \bibitem[{Ahmed \emph{et~al.}(2021)Ahmed, Benhamou, Bonsall \& Petrovskii}]{AHMED2021110728}
@@ -93,6 +93,10 @@ Klappstein, N., Michelot, T., Togunov, R. \& Flemming, J.M. (2025) Three-dimensi
 Kobayashi, H., Mark, B.L. \& Turin, W. (2011) \emph{Probability, Random Processes, and Statistical Analysis: applications to communications, signal processing, queueing theory and mathematical finance}.
 \newblock Cambridge University Press.
 
+\bibitem[{Lagona(2019)}]{lagona2019copula}
+Lagona, F. (2019) Copula-based segmentation of cylindrical time series.
+\newblock \emph{Statistics \& Probability Letters}, \textbf{144}, 16--22.
+
 \bibitem[{Langrock \emph{et~al.}(2014)Langrock, Hopcraft, Blackwell, Goodall, King, Niu, Patterson, Pedersen, Skarin \& Schick}]{LangrockEtAl2014}
 Langrock, R., Hopcraft, G., Blackwell, P., Goodall, V., King, R., Niu, M., Patterson, T., Pedersen, M., Skarin, A. \& Schick, R. (2014) Modelling group dynamic animal movement.
 \newblock \emph{Methods in Ecology and Evolution}, \textbf{5}, 190--199.
@@ -108,6 +112,10 @@ Laplanche, C., Marques, T.A. \& Thomas, L. (2015) Tracking marine mammals in 3d 
 \bibitem[{Lennox \emph{et~al.}(2025)Lennox, Adam, Riha, Klappstein, Monk, Vollset \& Beumer}]{LennoxEtAl2025}
 Lennox, R.J., Adam, T., Riha, M., Klappstein, N., Monk, C.T., Vollset, K.W. \& Beumer, L.T. (2025) Movement in {3D}: Novel opportunities for understanding animal behaviour and space use.
 \newblock \emph{Ethology}, \textbf{131}, e13529.
+
+\bibitem[{Mastrantonio(2022)}]{mastrantonio2022modeling}
+Mastrantonio, G. (2022) Modeling animal movement with directional persistence and attractive points.
+\newblock \emph{The Annals of Applied Statistics}, \textbf{16}, 2030--2053.
 
 \bibitem[{McClintock \emph{et~al.}(2022)McClintock, Abrahms, Chandler, Conn, Converse, Emmet, Gardner, Hostetter \& Johnson}]{McClintockEtAl2022}
 McClintock, B.T., Abrahms, B., Chandler, R.B., Conn, P.B., Converse, S.J., Emmet, R.L., Gardner, B., Hostetter, N.J. \& Johnson, D.S. (2022) An integrated path for spatial capture-recapture and animal movement modeling.
@@ -165,6 +173,10 @@ Mul, E., Blanchet, M.A., McClintock, B.T., Grecian, W.J., Biuw, M. \& Rikardsen,
 Nickel, B.A., Suraci, J.P., Nisi, A.C. \& Wilmers, C.C. (2021) Energetics and fear of humans constrain the spatial ecology of pumas.
 \newblock \emph{Proceedings of the National Academy of Sciences}, \textbf{118}, e2004592118.
 
+\bibitem[{Nychka \emph{et~al.}(2021)Nychka, Furrer, Paige \& Sain}]{Nychka2021fields}
+Nychka, D., Furrer, R., Paige, J. \& Sain, S. (2021) fields: Tools for spatial data.
+\newblock R package version 17.3.
+
 \bibitem[{Parton \& Blackwell(2017)}]{parton2017bayesian}
 Parton, A. \& Blackwell, P.G. (2017) Bayesian inference for multistate `step and turn' animal movement in continuous time.
 \newblock \emph{Journal of Agricultural, Biological and Environmental Statistics}, \textbf{22}, 373--392.
@@ -172,6 +184,10 @@ Parton, A. \& Blackwell, P.G. (2017) Bayesian inference for multistate `step and
 \bibitem[{Pirotta \emph{et~al.}(2018)Pirotta, Edwards, New \& Thompson}]{PirottaEtAl2018}
 Pirotta, E., Edwards, E.W.J., New, L. \& Thompson, P.M. (2018) Central place foragers and moving stimuli: A hidden-state model to discriminate the processes affecting movement.
 \newblock \emph{Journal of Animal Ecology}, \textbf{87}, 1116--1125.
+
+\bibitem[{Pritchard \emph{et~al.}(2025)Pritchard, Hurly, Photopoulou \& Healy}]{pritchard2025applying}
+Pritchard, D.J., Hurly, T.A., Photopoulou, T. \& Healy, S.D. (2025) Applying movement ecology models to comparative cognition experiments: a field test in hummingbirds.
+\newblock \emph{Proceedings of the Royal Society B: Biological Sciences}, \textbf{292}, 20250717.
 
 \bibitem[{{R Core Team}(2024)}]{RCoreTeam2024}
 {R Core Team} (2024) \emph{R: A Language and Environment for Statistical Computing}.
@@ -184,10 +200,6 @@ Rivest, L.P., Duchesne, T., Nicosia, A. \& Fortin, D. (2016) A general angular r
 \bibitem[{Russell \emph{et~al.}(2014)Russell, Brasseur, Thompson, Hastie, Janik, Aarts, McClintock, Matthiopoulos, Moss \& McConnell}]{russell2014marine}
 Russell, D.J., Brasseur, S.M., Thompson, D., Hastie, G.D., Janik, V.M., Aarts, G., McClintock, B.T., Matthiopoulos, J., Moss, S.E. \& McConnell, B. (2014) Marine mammals trace anthropogenic structures at sea.
 \newblock \emph{Current Biology}, \textbf{24}, R638--R639.
-
-\bibitem[{Schlather \emph{et~al.}(2015)Schlather, Malinowski, Menck, Oesting \& Strokorb}]{SchlatherEtAl2015}
-Schlather, M., Malinowski, A., Menck, P.J., Oesting, M. \& Strokorb, K. (2015) Analysis, simulation and prediction of multivariate random fields with package {RandomFields}.
-\newblock \emph{Journal of Statistical Software}, \textbf{63}, 1--25.
 
 \bibitem[{Thurfjell \emph{et~al.}(2014)Thurfjell, Ciuti \& Boyce}]{thurfjell2014applications}
 Thurfjell, H., Ciuti, S. \& Boyce, M.S. (2014) Applications of step-selection functions in ecology and conservation.

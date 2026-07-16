@@ -1,0 +1,204 @@
+\begin{thebibliography}{50}
+\providecommand{\natexlab}[1]{#1}
+
+\bibitem[{Ahmed \emph{et~al.}(2021)Ahmed, Benhamou, Bonsall \& Petrovskii}]{AHMED2021110728}
+Ahmed, D., Benhamou, S., Bonsall, M. \& Petrovskii, S. (2021) Three-dimensional random walk models of individual animal movement and their application to trap counts modelling.
+\newblock \emph{Journal of Theoretical Biology}, \textbf{524}, 110728.
+
+\bibitem[{Albertsen(2019)}]{albertsen2019generalizing}
+Albertsen, C.M. (2019) Generalizing the first-difference correlated random walk for marine animal movement data.
+\newblock \emph{Scientific Reports}, \textbf{9}, 4017.
+
+\bibitem[{Bassing \emph{et~al.}(2024)Bassing, Satterfield, Ganz, DeVivo, Kertson, Roussin, Wirsing \& Gardner}]{bassing2024predator}
+Bassing, S.B., Satterfield, L., Ganz, T.R., DeVivo, M., Kertson, B.N., Roussin, T., Wirsing, A.J. \& Gardner, B. (2024) Predator--prey space use and landscape features influence movement behaviors in a large--mammal community.
+\newblock \emph{Ecology}, p. e4448.
+
+\bibitem[{Blackwell \& Matthiopoulos(2024)}]{blackwell2024joint}
+Blackwell, P.G. \& Matthiopoulos, J. (2024) Joint inference for telemetry and spatial survey data.
+\newblock \emph{Ecology}, \textbf{105}, e4457.
+
+\bibitem[{Blackwell \emph{et~al.}(2016)Blackwell, Niu, Lambert \& LaPoint}]{BlackwellEtAl2016}
+Blackwell, P.G., Niu, M., Lambert, M.S. \& LaPoint, S.D. (2016) Exact {B}ayesian inference for animal movement in continuous time.
+\newblock \emph{Methods in Ecology and Evolution}, \textbf{7}, 184--195.
+
+\bibitem[{Blackwell(1997)}]{blackwell1997random}
+Blackwell, P. (1997) Random diffusion models for animal movement.
+\newblock \emph{Ecological Modelling}, \textbf{100}, 87--102.
+
+\bibitem[{Brillinger \emph{et~al.}(2012)Brillinger, Preisler, Ager \& Kie}]{BrillingerEtAl2012}
+Brillinger, D.R., Preisler, H.K., Ager, A.A. \& Kie, J. (2012) The use of potential functions in modelling animal movement.
+\newblock \emph{Selected Works of David Brillinger}, pp. 385--409. Springer.
+
+\bibitem[{Carter \emph{et~al.}(2020)Carter, McClintock, Embling, Bennett, Thompson \& Russell}]{CarterEtAl2020}
+Carter, M.I., McClintock, B.T., Embling, C.B., Bennett, K.A., Thompson, D. \& Russell, D.J. (2020) From pup to predator; generalized hidden markov models reveal rapid development of movement strategies in a na{\"\i}ve long-lived vertebrate.
+\newblock \emph{Oikos}, \textbf{129}, 630--642.
+
+\bibitem[{Christ \emph{et~al.}(2008)Christ, Ver~Hoef \& Zimmerman}]{Christ:2008fk}
+Christ, A., Ver~Hoef, J. \& Zimmerman, D.L. (2008) An animal movement model incorporating home range and habitat selection.
+\newblock \emph{Environmental and Ecological Statistics}, \textbf{15}, 27--38.
+
+\bibitem[{DeRuiter \emph{et~al.}(2017)DeRuiter, Langrock, Skirbutas, Goldbogen, Calambokidis, Friedlaender \& Southall}]{DeRuiterEtAl2017}
+DeRuiter, S.L., Langrock, R., Skirbutas, T., Goldbogen, J.A., Calambokidis, J., Friedlaender, A.S. \& Southall, B.L. (2017) A multivariate mixed hidden {M}arkov model to analyze blue whale diving behaviour during controlled sound exposures.
+\newblock \emph{The Annals of Applied Statistics}, \textbf{11}, 362--392.
+
+\bibitem[{Eisaguirre \emph{et~al.}(2024)Eisaguirre, Williams \& Hooten}]{eisaguirre2024rayleigh}
+Eisaguirre, J.M., Williams, P.J. \& Hooten, M.B. (2024) Rayleigh step-selection functions and connections to continuous-time mechanistic movement models.
+\newblock \emph{Movement Ecology}, \textbf{12}, 14.
+
+\bibitem[{Gardner \emph{et~al.}(2022)Gardner, McClintock, Converse \& Hostetter}]{GardnerEtAl2022}
+Gardner, B., McClintock, B.T., Converse, S.J. \& Hostetter, N.J. (2022) Integrated animal movement and spatial capture-recapture models: Simulation, implementation, and inference.
+\newblock \emph{Ecology}, \textbf{103}, e3771.
+
+\bibitem[{Gillies \emph{et~al.}(2023)Gillies, Weimerskirch, Thorley, Clay, Martín~Lopez, Joo, Basille \& Patrick}]{gillies2023boldness}
+Gillies, N., Weimerskirch, H., Thorley, J., Clay, T.A., Martín~Lopez, L.M., Joo, R., Basille, M. \& Patrick, S.C. (2023) Boldness predicts plasticity in flight responses to winds.
+\newblock \emph{Journal of Animal Ecology}, \textbf{92}, 1730--1742.
+
+\bibitem[{Glennie \emph{et~al.}(2023)Glennie, Adam, Leos-Barajas, Michelot, Photopoulou \& McClintock}]{glennie2023hidden}
+Glennie, R., Adam, T., Leos-Barajas, V., Michelot, T., Photopoulou, T. \& McClintock, B.T. (2023) Hidden markov models: Pitfalls and opportunities in ecology.
+\newblock \emph{Methods in Ecology and Evolution}, \textbf{14}, 43--56.
+
+\bibitem[{Hindell \emph{et~al.}(2016)Hindell, McMahon, Bester, Boehme, Costa, Fedak, Guinet, Herraiz-Borreguero, Harcourt, Huckstadt \emph{et~al.}}]{hindell2016circumpolar}
+Hindell, M.A., McMahon, C.R., Bester, M.N., Boehme, L., Costa, D., Fedak, M.A., Guinet, C., Herraiz-Borreguero, L., Harcourt, R.G., Huckstadt, L. \emph{et~al.} (2016) Circumpolar habitat use in the southern elephant seal: implications for foraging success and population trajectories.
+\newblock \emph{Ecosphere}, \textbf{7}, e01213.
+
+\bibitem[{Hodel \& Fieberg(2022)}]{hodel2022circular}
+Hodel, F.H. \& Fieberg, J.R. (2022) Circular--linear copulae for animal movement data.
+\newblock \emph{Methods in Ecology and Evolution}, \textbf{13}, 1001--1013.
+
+\bibitem[{Hooten \emph{et~al.}(2017)Hooten, Johnson, McClintock \& Morales}]{HootenEtAl2017}
+Hooten, M.B., Johnson, D.S., McClintock, B.T. \& Morales, J.M. (2017) \emph{Animal Movement: Statistical Models for Telemetry Data}.
+\newblock CRC Press, Boca Raton, USA.
+
+\bibitem[{Hooten \emph{et~al.}(2019)Hooten, Scharf \& Morales}]{HootenEtAl2019}
+Hooten, M.B., Scharf, H.R. \& Morales, J.M. (2019) Running on empty: recharge dynamics from animal movement data.
+\newblock \emph{Ecology Letters}, \textbf{22}, 377--389.
+
+\bibitem[{Johnson \emph{et~al.}(2008{\natexlab{a}})Johnson, London, Lea \& Durban}]{JohnsonEtAl2008}
+Johnson, D.S., London, J.M., Lea, M.A. \& Durban, J.W. (2008{\natexlab{a}}) Continuous-time correlated random walk model for animal telemetry data.
+\newblock \emph{Ecology}, \textbf{89}, 1208--1215.
+
+\bibitem[{Johnson \emph{et~al.}(2008{\natexlab{b}})Johnson, Thomas, Hoef \& Christ}]{Johnson:2008kx}
+Johnson, D.S., Thomas, D.L., Hoef, J.M.V. \& Christ, A. (2008{\natexlab{b}}) A general framework for the analysis of animal resource selection from telemetry data.
+\newblock \emph{Biometrics Journal of the International Biometric Society}, \textbf{64}, 968--976.
+
+\bibitem[{Jonsen \emph{et~al.}(2005)Jonsen, Flemming \& Myers}]{JonsenEtAl2005}
+Jonsen, I.D., Flemming, J.M. \& Myers, R.A. (2005) Robust state--space modeling of animal movement data.
+\newblock \emph{Ecology}, \textbf{86}, 2874--2880.
+
+\bibitem[{Klappstein \emph{et~al.}(2025)Klappstein, Michelot, Togunov \& Flemming}]{KlappsteinEtAl2025}
+Klappstein, N., Michelot, T., Togunov, R. \& Flemming, J.M. (2025) Three-dimensional correlated random walks for animal movement and habitat selection.
+\newblock {bioRxiv} doi: 10.1101/2025.11.07.687274.
+
+\bibitem[{Kobayashi \emph{et~al.}(2011)Kobayashi, Mark \& Turin}]{kobayashi2011probability}
+Kobayashi, H., Mark, B.L. \& Turin, W. (2011) \emph{Probability, Random Processes, and Statistical Analysis: applications to communications, signal processing, queueing theory and mathematical finance}.
+\newblock Cambridge University Press.
+
+\bibitem[{Langrock \emph{et~al.}(2014)Langrock, Hopcraft, Blackwell, Goodall, King, Niu, Patterson, Pedersen, Skarin \& Schick}]{LangrockEtAl2014}
+Langrock, R., Hopcraft, G., Blackwell, P., Goodall, V., King, R., Niu, M., Patterson, T., Pedersen, M., Skarin, A. \& Schick, R. (2014) Modelling group dynamic animal movement.
+\newblock \emph{Methods in Ecology and Evolution}, \textbf{5}, 190--199.
+
+\bibitem[{Langrock \emph{et~al.}(2012)Langrock, King, Matthiopoulos, Thomas, Fortin \& Morales}]{LangrockEtAl2012}
+Langrock, R., King, R., Matthiopoulos, J., Thomas, L., Fortin, D. \& Morales, J.M. (2012) Flexible and practical modeling of animal telemetry data: hidden {M}arkov models and extensions.
+\newblock \emph{Ecology}, \textbf{93}, 2336--2342.
+
+\bibitem[{Laplanche \emph{et~al.}(2015)Laplanche, Marques \& Thomas}]{LaplancheEtAl2015}
+Laplanche, C., Marques, T.A. \& Thomas, L. (2015) Tracking marine mammals in 3d using electronic tag data.
+\newblock \emph{Methods in Ecology and Evolution}, \textbf{6}, 987--996.
+
+\bibitem[{Lennox \emph{et~al.}(2025)Lennox, Adam, Riha, Klappstein, Monk, Vollset \& Beumer}]{LennoxEtAl2025}
+Lennox, R.J., Adam, T., Riha, M., Klappstein, N., Monk, C.T., Vollset, K.W. \& Beumer, L.T. (2025) Movement in {3D}: Novel opportunities for understanding animal behaviour and space use.
+\newblock \emph{Ethology}, \textbf{131}, e13529.
+
+\bibitem[{McClintock \emph{et~al.}(2022)McClintock, Abrahms, Chandler, Conn, Converse, Emmet, Gardner, Hostetter \& Johnson}]{McClintockEtAl2022}
+McClintock, B.T., Abrahms, B., Chandler, R.B., Conn, P.B., Converse, S.J., Emmet, R.L., Gardner, B., Hostetter, N.J. \& Johnson, D.S. (2022) An integrated path for spatial capture-recapture and animal movement modeling.
+\newblock \emph{Ecology}, \textbf{103}, e3473.
+
+\bibitem[{McClintock \emph{et~al.}(2014)McClintock, Johnson, Hooten, Ver~Hoef \& Morales}]{McClintockEtAl2014b}
+McClintock, B.T., Johnson, D.S., Hooten, M.B., Ver~Hoef, J.M. \& Morales, J.M. (2014) When to be discrete: the importance of time formulation in understanding animal movement.
+\newblock \emph{Movement Ecology}, \textbf{2}, 21.
+
+\bibitem[{McClintock \emph{et~al.}(2012)McClintock, King, Thomas, Matthiopoulos, McConnell \& Morales}]{McClintockEtAl2012}
+McClintock, B.T., King, R., Thomas, L., Matthiopoulos, J., McConnell, B.J. \& Morales, J.M. (2012) A general discrete-time modeling framework for animal movement using multistate random walks.
+\newblock \emph{Ecological Monographs}, \textbf{82}, 335--349.
+
+\bibitem[{McClintock \& Lander(2024)}]{McClintockLander2024}
+McClintock, B.T. \& Lander, M.E. (2024) A multistate {L}angevin diffusion for inferring behavior-specific habitat selection and utilization distributions.
+\newblock \emph{Ecology}, \textbf{105}, e4186.
+
+\bibitem[{McClintock \& Michelot(2018)}]{McClintockMichelot2018}
+McClintock, B.T. \& Michelot, T. (2018) momentu{HMM}: {R} package for generalized hidden {M}arkov models of animal movement.
+\newblock \emph{Methods in Ecology and Evolution}, \textbf{9}, 1518--1530.
+
+\bibitem[{McClintock \emph{et~al.}(2013)McClintock, Russell, Matthiopoulos \& King}]{McClintockEtAl2013c}
+McClintock, B.T., Russell, D.J., Matthiopoulos, J. \& King, R. (2013) Combining individual animal movement and ancillary biotelemetry data to investigate population-level activity budgets.
+\newblock \emph{Ecology}, \textbf{94}, 838--849.
+
+\bibitem[{McConnell \emph{et~al.}(1992)McConnell, Chambers \& Fedak}]{mcconnell1992foraging}
+McConnell, B., Chambers, C. \& Fedak, M. (1992) Foraging ecology of southern elephant seals in relation to the bathymetry and productivity of the {S}outhern {O}cean.
+\newblock \emph{Antarctic science}, \textbf{4}, 393--398.
+
+\bibitem[{Michelot \emph{et~al.}(2019)Michelot, Gloaguen, Blackwell \& {\'E}tienne}]{MichelotEtAl2019}
+Michelot, T., Gloaguen, P., Blackwell, P.G. \& {\'E}tienne, M.P. (2019) The {L}angevin diffusion as a continuous-time model of animal movement and habitat selection.
+\newblock \emph{Methods in Ecology and Evolution}, \textbf{10}, 1894--1907.
+
+\bibitem[{Michelot \emph{et~al.}(2017)Michelot, Langrock, Bestley, Jonsen, Photopoulou \& Patterson}]{MichelotEtAl2017}
+Michelot, T., Langrock, R., Bestley, S., Jonsen, I.D., Photopoulou, T. \& Patterson, T.A. (2017) Estimation and simulation of foraging trips in land-based marine predators.
+\newblock \emph{Ecology}, \textbf{98}, 1932--1944.
+
+\bibitem[{Michelot \emph{et~al.}(2016)Michelot, Langrock \& Patterson}]{MichelotEtAl2016}
+Michelot, T., Langrock, R. \& Patterson, T.A. (2016) move{HMM}: An {R} package for the statistical modelling of animal movement data using hidden {M}arkov models.
+\newblock \emph{Methods in Ecology and Evolution}, \textbf{7}, 1308--1315.
+
+\bibitem[{Michelot \& Blackwell(2019)}]{MichelotBlackwell2018}
+Michelot, T. \& Blackwell, P.G. (2019) State-switching continuous-time correlated random walks.
+\newblock \emph{Methods in Ecology and Evolution}, \textbf{10}, 637--649.
+
+\bibitem[{Morales \emph{et~al.}(2004)Morales, Haydon, Frair, Holsinger \& Fryxell}]{MoralesEtAl2004}
+Morales, J.M., Haydon, D.T., Frair, J., Holsinger, K.E. \& Fryxell, J.M. (2004) Extracting more out of relocation data: building movement models as mixtures of random walks.
+\newblock \emph{Ecology}, \textbf{85}, 2436--2445.
+
+\bibitem[{Mul \emph{et~al.}(2020)Mul, Blanchet, McClintock, Grecian, Biuw \& Rikardsen}]{mul2020killer}
+Mul, E., Blanchet, M.A., McClintock, B.T., Grecian, W.J., Biuw, M. \& Rikardsen, A. (2020) Killer whales are attracted to herring fishing vessels.
+\newblock \emph{Marine Ecology Progress Series}, \textbf{652}, 1--13.
+
+\bibitem[{Nickel \emph{et~al.}(2021)Nickel, Suraci, Nisi \& Wilmers}]{nickel2021energetics}
+Nickel, B.A., Suraci, J.P., Nisi, A.C. \& Wilmers, C.C. (2021) Energetics and fear of humans constrain the spatial ecology of pumas.
+\newblock \emph{Proceedings of the National Academy of Sciences}, \textbf{118}, e2004592118.
+
+\bibitem[{Parton \& Blackwell(2017)}]{parton2017bayesian}
+Parton, A. \& Blackwell, P.G. (2017) Bayesian inference for multistate `step and turn' animal movement in continuous time.
+\newblock \emph{Journal of Agricultural, Biological and Environmental Statistics}, \textbf{22}, 373--392.
+
+\bibitem[{Pirotta \emph{et~al.}(2018)Pirotta, Edwards, New \& Thompson}]{PirottaEtAl2018}
+Pirotta, E., Edwards, E.W.J., New, L. \& Thompson, P.M. (2018) Central place foragers and moving stimuli: A hidden-state model to discriminate the processes affecting movement.
+\newblock \emph{Journal of Animal Ecology}, \textbf{87}, 1116--1125.
+
+\bibitem[{{R Core Team}(2024)}]{RCoreTeam2024}
+{R Core Team} (2024) \emph{R: A Language and Environment for Statistical Computing}.
+\newblock R Foundation for Statistical Computing, Vienna, Austria.
+
+\bibitem[{Rivest \emph{et~al.}(2016)Rivest, Duchesne, Nicosia \& Fortin}]{rivest2016general}
+Rivest, L.P., Duchesne, T., Nicosia, A. \& Fortin, D. (2016) A general angular regression model for the analysis of data on animal movement in ecology.
+\newblock \emph{Journal of the Royal Statistical Society Series C: Applied Statistics}, \textbf{65}, 445--463.
+
+\bibitem[{Russell \emph{et~al.}(2014)Russell, Brasseur, Thompson, Hastie, Janik, Aarts, McClintock, Matthiopoulos, Moss \& McConnell}]{russell2014marine}
+Russell, D.J., Brasseur, S.M., Thompson, D., Hastie, G.D., Janik, V.M., Aarts, G., McClintock, B.T., Matthiopoulos, J., Moss, S.E. \& McConnell, B. (2014) Marine mammals trace anthropogenic structures at sea.
+\newblock \emph{Current Biology}, \textbf{24}, R638--R639.
+
+\bibitem[{Schlather \emph{et~al.}(2015)Schlather, Malinowski, Menck, Oesting \& Strokorb}]{SchlatherEtAl2015}
+Schlather, M., Malinowski, A., Menck, P.J., Oesting, M. \& Strokorb, K. (2015) Analysis, simulation and prediction of multivariate random fields with package {RandomFields}.
+\newblock \emph{Journal of Statistical Software}, \textbf{63}, 1--25.
+
+\bibitem[{Thurfjell \emph{et~al.}(2014)Thurfjell, Ciuti \& Boyce}]{thurfjell2014applications}
+Thurfjell, H., Ciuti, S. \& Boyce, M.S. (2014) Applications of step-selection functions in ecology and conservation.
+\newblock \emph{Movement ecology}, \textbf{2}, 4.
+
+\bibitem[{Whoriskey \emph{et~al.}(2017)Whoriskey, Auger-M{\'e}th{\'e}, Albertsen, Whoriskey, Binder, Krueger \& Mills~Flemming}]{WhoriskeyEtAl2017}
+Whoriskey, K., Auger-M{\'e}th{\'e}, M., Albertsen, C.M., Whoriskey, F.G., Binder, T.R., Krueger, C.C. \& Mills~Flemming, J. (2017) A hidden {M}arkov movement model for rapidly identifying behavioral states from animal tracks.
+\newblock \emph{Ecology and Evolution}, \textbf{7}, 2112--2121.
+
+\bibitem[{Zucchini \emph{et~al.}(2016)Zucchini, MacDonald \& Langrock}]{ZucchiniEtAl2016}
+Zucchini, W., MacDonald, I.L. \& Langrock, R. (2016) \emph{Hidden {M}arkov Models for Time Series: An Introduction Using R}.
+\newblock CRC Press.
+
+\end{thebibliography}
